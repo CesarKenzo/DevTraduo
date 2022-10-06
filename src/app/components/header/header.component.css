@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Monospace', monospace;
+}
+
+.logo_title {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Monospace', monospace;
+    font-size: 24px;
+}
+
+#menu-h{
+    background-color: #444444;
+}
+
+#menu-h ul {
+    max-width: 1000px;
+    list-style: none;
+    padding: 0;
+}
+
+#menu-h ul li {
+    display: inline;
+}
+
+#menu-h ul li a {
+    color: #FFF;
+    padding: 10px;
+    display: inline-block;
+    transition: background .4s;
+    text-decoration: solid;
+}
+
+#menu-h ul li:last-child a{
+    font-weight: bold;
+    float: right;
+}
+
+#menu-h ul li:last-child{
+    font-weight: bold;
+    float: right;
+}
+
+#menu-h ul li a:hover {
+    background-color: #4169E1;
+}
+
+/* The search field */
+#myInput {
+    box-sizing: border-box;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 8px 250px 8px 250px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+/* The search field when it gets focus/clicked on */
+#myInput:focus {outline: 3px solid #ddd;}
+
+/* Material Icon Dark Mode*/
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.button_login {
+    background-color: #4169E1; 
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    float: right;
+}
+
+.button_signUp {
+    background-color: #FFF; 
+    border: none;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    float: right;
+  }
+
+  .search_field {
+    width: 450px;
+    height: 50px;
+    position: absolute;
+    align-items: center;
+    background-color: #FFF;
+  }

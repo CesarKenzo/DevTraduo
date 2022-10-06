@@ -1,0 +1,58 @@
+<header>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <nav id="menu-h">
+        <ul>
+            <button style="background-color: #444444; border: #444444; text-align: left;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon class="material-icons md-light">menu</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>home</mat-icon>
+                    <span>Home</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>trending_up</mat-icon>
+                    <span>Trending</span>
+                </button>
+                    <button mat-menu-item>
+                    <mat-icon>post_add</mat-icon>
+                    <span>Postar</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>notifications</mat-icon>
+                    <span>Notificações</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>settings</mat-icon>
+                    <span>Configurações</span>
+                </button>
+            </mat-menu>
+              
+            <li>
+                <a href="index.html">
+                    <h1 class="logo_title">DevTraduo</h1>
+                </a>
+            </li>
+            <mat-form-field class="search_field" appearance="fill">
+                <mat-label>Pesquisar</mat-label>
+                <mat-icon matPrefix>search</mat-icon>
+                <input matInput type="text">
+            </mat-form-field>
+            <button mat-mini-fab style="left: 470px; bottom: 4px; background-color: transparent">
+                <mat-icon>chat</mat-icon>
+            </button>
+            <button mat-mini-fab style="left: 490px; bottom: 4px; background-color: transparent">
+                <mat-icon>notifications</mat-icon>
+            </button>
+            <button mat-mini-fab style="left: 510px; bottom: 4px; background-color: transparent;">
+                <mat-icon>post_add</mat-icon>
+            </button>
+
+            <li> </li><li> </li>
+            <button class="button_login">Login</button>
+            <button class="button_signUp">Sign Up</button>
+        </ul>
+    </nav>
+</header>
+

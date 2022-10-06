@@ -1,0 +1,29 @@
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    max-width: 1000px;
+  }
+  
+.example-card {
+    max-width: 800px;
+    height: 300px;
+    left: 600px;
+    background-color: #99999986;
+}
+
+.internal-card {
+    width: 700px;
+    height: 180px;
+    background-color: #FDFFFF;
+    left: 40px;
+}
+
+.buttons-post {
+    align-items: center;
+}
+
+.comment-card {
+    left: 600px;
+    background-color: #99999986;
+}
