@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule, ProgressSpinnerMode} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -42,6 +43,7 @@ import { PostComponent } from './components/post/post.component';
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatInputModule,
+    MatDialogModule,
     NgbModule,
   ],
   providers: [],

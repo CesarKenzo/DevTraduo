@@ -19,11 +19,22 @@
                     </mat-card-content>
                 </mat-card>
             </mat-card-content>
-            <div class="buttons-post">
-                <mat-icon style="margin-left: 2em;">thumb_up</mat-icon><mat-icon style="margin-left: 2em;">comment</mat-icon><mat-icon style="margin-left: 2em;">flag</mat-icon><mat-icon style="margin-left: 2em;">share</mat-icon>
-            </div>
+            <mat-card-footer>
+                <button mat-button style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                <button mat-button style="background-color: transparent;"><mat-icon >flag</mat-icon></button>
+                <button mat-button style="background-color: transparent;"><mat-icon >share</mat-icon></button>
+            </mat-card-footer>
         </mat-card>
     </div>
+    <tr><br/></tr>
+    <mat-form-field appearance="outline" class="comment">
+        <textarea matInput placeholder="Ex. Comentário" style="background-color: #FFF; min-height: 200px;"></textarea>
+        <button mat-button style="background-color: #FFF;"><mat-icon >format_bold</mat-icon></button>
+        <button mat-button style="background-color: #FFF;"><mat-icon >format_italic</mat-icon></button>
+        <button mat-button style="background-color: #FFF;" (click)="openDialog()"><mat-icon >attach_file</mat-icon></button>
+        <button mat-button style="background-color: #FFF;"><mat-icon >format_list_bulleted</mat-icon></button>
+        <button mat-button style="background-color: #FFF;"><mat-icon >format_list_numbered</mat-icon></button>
+    </mat-form-field>
     <tr><br/></tr>
     <mat-tab-group class="comment-card">
         <mat-tab label="Tradução"> 
@@ -34,9 +45,12 @@
                 <mat-card-content>
                     Explicação ...
                 </mat-card-content>
-                <div class="buttons-post">
-                    <mat-icon style="margin-left: 2em;">thumb_up</mat-icon><mat-icon style="margin-left: 2em;">reply</mat-icon><mat-icon style="margin-left: 2em;">flag</mat-icon><mat-icon style="margin-left: 2em;">share</mat-icon>
-                </div>
+                <mat-card-footer>
+                    <button mat-button style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                    <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
+                    <button mat-button style="background-color: transparent;"><mat-icon >flag</mat-icon></button>
+                    <button mat-button style="background-color: transparent;"><mat-icon >share</mat-icon></button>
+                </mat-card-footer>
             </mat-card>
             <br/>
             <mat-card>
@@ -46,9 +60,12 @@
                 <mat-card-content>
                     Explicação ...
                 </mat-card-content>
-                <div class="buttons-post">
-                    <mat-icon style="margin-left: 2em;">thumb_up</mat-icon><mat-icon style="margin-left: 2em;">reply</mat-icon><mat-icon style="margin-left: 2em;">flag</mat-icon><mat-icon style="margin-left: 2em;">share</mat-icon>
-                </div>
+                <mat-card-footer>
+                    <button mat-button style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                    <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
+                    <button mat-button style="background-color: transparent;"><mat-icon >flag</mat-icon></button>
+                    <button mat-button style="background-color: transparent;"><mat-icon >share</mat-icon></button>
+                </mat-card-footer>
             </mat-card>
             <br/>
             <mat-card>
@@ -58,9 +75,12 @@
                 <mat-card-content>
                     Explicação ...
                 </mat-card-content>
-                <div class="buttons-post">
-                    <mat-icon style="margin-left: 2em;">thumb_up</mat-icon><mat-icon style="margin-left: 2em;">reply</mat-icon><mat-icon style="margin-left: 2em;">flag</mat-icon><mat-icon style="margin-left: 2em;">share</mat-icon>
-                </div>
+                <mat-card-footer>
+                    <button mat-button style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                    <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
+                    <button mat-button style="background-color: transparent;"><mat-icon >flag</mat-icon></button>
+                    <button mat-button style="background-color: transparent;"><mat-icon >share</mat-icon></button>
+                </mat-card-footer>
             </mat-card>
             <br/>
         </mat-tab>
@@ -72,9 +92,12 @@
                 <mat-card-content>
                     Tradução ...
                 </mat-card-content>
-                <div class="buttons-post">
-                    <mat-icon style="margin-left: 2em;">thumb_up</mat-icon><mat-icon style="margin-left: 2em;">reply</mat-icon><mat-icon style="margin-left: 2em;">flag</mat-icon><mat-icon style="margin-left: 2em;">share</mat-icon>
-                </div>
+                <mat-card-footer>
+                    <button mat-button style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                    <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
+                    <button mat-button style="background-color: transparent;"><mat-icon >flag</mat-icon></button>
+                    <button mat-button style="background-color: transparent;"><mat-icon >share</mat-icon></button>
+                </mat-card-footer>
             </mat-card>
             <br/>
         </mat-tab>

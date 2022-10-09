@@ -7,7 +7,7 @@
   
 .example-card {
     max-width: 800px;
-    height: 300px;
+    height: 320px;
     left: 600px;
     background-color: #99999986;
 }
@@ -26,4 +26,16 @@
 .comment-card {
     left: 600px;
     background-color: #99999986;
+}
+
+.comment-box {
+    width: 500px;
+    height: 200px;
+    background-color: #fff;    
+}
+
+.comment {
+    border-color: transparent;
+    width: 700px;
+    left: 650px;
 }
