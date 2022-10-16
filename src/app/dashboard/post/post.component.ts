@@ -7,6 +7,8 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
+
+  
   filePath: string | undefined;
 
   constructor(public dialog: MatDialog) { }
