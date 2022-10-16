@@ -6,24 +6,28 @@ import { SharedModule } from '../shared/shared.module';
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { PostComponent } from './post/post.component';
 import { HomeComponent } from "./home/home.component";
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UploadFileComponent } from './upload-file/upload-file.component';
 
 
 @NgModule({
   declarations: [
     PostComponent,
     HomeComponent,
-    DashboardComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileComponent,
+    UploadFileComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     SharedModule,
     AppMaterialModule
-  ]
+  ],
+
+  exports: [FooterComponent]
 })
 export class DashboardModule { }

@@ -1,0 +1,28 @@
+body {
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+
+mat-card {
+    max-width: 60%;
+    align-items: center;
+    margin: 2em auto;
+}
+
+mat-card-actions, mat-card h2, mat-card .img_dev_traduo {
+    text-align: center;
+}
+
+header mat-toolbar{
+    background-color: #D0D0D0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.img_dev_traduo img{
+    height: 200px;
+    width: 200px;
+}

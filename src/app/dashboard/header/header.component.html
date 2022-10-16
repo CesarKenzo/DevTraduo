@@ -38,17 +38,21 @@
                 <mat-icon matPrefix>search</mat-icon>
                 <input matInput type="text">
             </mat-form-field>
-            <button mat-mini-fab style="left: 470px; bottom: 4px; background-color: transparent">
+            <button class="botao_superior" mat-mini-fab style="left: 470px; bottom: 4px; background-color: transparent">
                 <mat-icon>chat</mat-icon>
             </button>
-            <button mat-mini-fab style="left: 490px; bottom: 4px; background-color: transparent">
+            <button class="botao_superior" mat-mini-fab style="left: 490px; bottom: 4px; background-color: transparent">
                 <mat-icon>notifications</mat-icon>
             </button>
-            <button mat-mini-fab style="left: 510px; bottom: 4px; background-color: transparent;">
+            <button class="botao_superior" mat-mini-fab style="left: 510px; bottom: 4px; background-color: transparent;">
                 <mat-icon>post_add</mat-icon>
             </button>
-            <button class="button_login">Login</button>
-            <button class="button_signUp">Sign Up</button>
+            <button class="botao_superior" mat-mini-fab style="left: 530px; bottom: 4px; background-color: transparent;" (click)="navegar('dashboard/profile')">
+                <mat-icon>person</mat-icon>
+            </button>
+            <button class="botao_superior" mat-mini-fab style="left: 550px; bottom: 4px; background-color: transparent;" (click)="navegar('login')">
+                Logout
+            </button>
         </ul>
     </nav>
 </header>

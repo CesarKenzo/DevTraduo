@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Criar uma Conta</h1>
+<div mat-dialog-content>
+  <p>preencha os campos a seguir</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="usuario.nome">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Login</mat-label>
+    <input matInput [(ngModel)]="usuario.login">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Senha</mat-label>
+    <input matInput [(ngModel)]="usuario.senha">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Nome de Perfil</mat-label>
+    <input matInput [(ngModel)]="usuario.perfil">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="div_button">
+  <button class="send" mat-raised-button (click)="onAdd()" color="primary" mat-dialog-close>Confirmar</button>
+  <button class="cancel" mat-raised-button mat-dialog-close cdkFocusInitial color="warn">Cancelar</button>
+</div>

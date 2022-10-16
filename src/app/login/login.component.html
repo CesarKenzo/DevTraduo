@@ -1,1 +1,75 @@
-<p>login works!</p>
+<header>
+    <mat-toolbar class="header mat-elevation-z4">
+        <span>
+                <img class="logo" src="../../assets/logo_devTraduo.png" alt="logo">
+        </span>
+        <span>
+            <a href="http://www.each.usp.br/">
+                <img class="logo" src="../../assets/usp.png" alt="logo">
+            </a>
+        </span>
+    </mat-toolbar>
+</header>
+
+<body>
+
+    <mat-card>
+        <div class="img_dev_traduo">
+            <img *ngIf="this.contador == 0" src="../../assets/devTraduo_qualidade.png" alt="logo dev traduo"> 
+            <img *ngIf="this.contador == 1" src="../../assets/camisetas.png" alt="logo dev traduo"> 
+            <img *ngIf="this.contador == 2" src="../../assets/celulares.png" alt="logo dev traduo"> 
+            <img *ngIf="this.contador == 3" src="../../assets/produtos.png" alt="logo dev traduo"> 
+        </div>
+
+
+        <h2>Login</h2>
+
+        
+
+        <div *ngIf="message" class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ message }}
+            <a href="#" class="close" data-dismiss="alert" aria-label="close"> &times; </a>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+                (click)="$event.preventDefault()">
+                <span aria-hidden="true"> &times; </span>
+            </button>
+        </div>
+
+        <div class="well">
+            <form #formLogin="ngForm">
+                <div class="form-group">
+                    <label for="usuario">Usuario:</label><!--coloquei Usuário e meu navegador traduz e tira a palavra-->
+                    <input type="text" class="form-control" id="usuario" name="usuario" [(ngModel)]="login.login"
+                        #usuario="ngModel" required>
+                    <div *ngIf="usuario.errors && (usuario.dirty || usuario.touched)" class="alert alert-danger">
+                        <div [hidden]="!usuario.errors ['required']">
+                            Digite o usuário.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="text" class="form-control" id="senha" name="senha" [(ngModel)]="login.senha"
+                        #senha="ngModel" required>
+                    <div *ngIf="usuario.errors && (usuario.dirty || usuario.touched)" class="alert alert-danger">
+                        <div [hidden]="!senha.errors?.['required']">
+                            Digite a senha.
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" (click)="logar()"
+                        [disabled]="!formLogin.form.valid">Logar</button>
+                    <button mat-raised-button color="primary" (click)="openDialog()">Sing Up</button>
+                </mat-card-actions>
+            </form>
+        </div>
+
+    </mat-card>
+
+</body>
+
+<app-footer></app-footer>

@@ -1,0 +1,43 @@
+body {
+    background-color: #c4d4dc;
+}
+
+.superior,
+.final {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 400px;
+}
+
+
+.example-card1,
+.example-card2,
+.detalhes {
+    width: 40%;
+    height: 80%;
+    margin-bottom: 8px;
+}
+
+mat-card img {
+    width: 50%;
+    align-items: center;
+    text-align: center;
+}
+
+.example-card2 {
+    text-align: center;
+}
+
+
+
+.detalhes {
+    border: 1px solid;
+}
+
+.detalhes .edit {
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    margin: 1%;
+}

@@ -1,3 +1,10 @@
+body {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
 .column {
     float:left;
     width: 25%;
@@ -13,7 +20,6 @@
   
   .example-card {
     max-width: 800px;
-    left: 600px;
     background-color: #99999986;
   }
   
@@ -21,7 +27,6 @@
     width: 700px;
     height: 150px;
     background-color: #FDFFFF;
-    left: 40px;
   }
   
   .internal-card-profile {
@@ -50,4 +55,5 @@
     width: 100px; 
     height: 10px;
     background-color: transparent;
+    border: 1px solid;
   }

@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<body>
+
+    <div class="superior">
+
+        <mat-card class="example-card1">
+            <mat-card-title-group>
+                <mat-card-title>{{ nome }}</mat-card-title>
+                <mat-card-subtitle> {{ conhecimentos }} </mat-card-subtitle>
+                <mat-card-subtitle>
+                    <app-upload-file></app-upload-file>
+                </mat-card-subtitle>
+                <img mat-card-xl-image
+                    src="https://classic.exame.com/wp-content/uploads/2022/08/house-of-the-dragon.jpg?quality=70&strip=info&w=1024">
+            </mat-card-title-group>
+            <mat-card-content>
+                {{longText}}
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="example-card2">
+            <img
+                src="https://previews.123rf.com/images/robuart/robuart1902/robuart190200684/116762560-golden-reward-with-stars-and-ribbons-medal-prize-icon-with-modern-concept-and-simple-logo-shape-in-f.jpg">
+        </mat-card>
+    </div>
+
+    <div class="final">
+
+        <mat-card class="detalhes">
+            <div class="conteudo">
+                {{ conteudo }}
+            </div>
+            <div class="edit">
+                <button mat-stroked-button (click)="openDialog()" color="primary" style="border: 1px solid blue">
+                    <mat-icon color="primary">edit</mat-icon>Editar
+                </button>
+            </div>
+        </mat-card>
+        <button mat-button (click)="openTranslation()">
+            <mat-icon>article</mat-icon>Translation
+        </button>
+        <button mat-button (click)="openExplanation()">
+            <mat-icon>handshake</mat-icon>Explanation
+        </button>
+        <button mat-button (click)="openPosts()">
+            <mat-icon>view_list</mat-icon>Posts
+        </button>
+    </div>
+</body>
+
+
+<app-footer></app-footer>

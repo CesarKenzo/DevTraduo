@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +10,12 @@ export class HeaderComponent implements OnInit {
 
   value = 'Clear me';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  public navegar(rota: string){
+    this.router.navigate([rota]);
   }
 
 }

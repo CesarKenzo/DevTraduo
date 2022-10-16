@@ -1,0 +1,14 @@
+<input type="file" style="display: none" (change)="onFileSelected($event)" #fileUpload>
+
+<div class="file-upload" align="center">
+
+    <p *ngIf="mensagem"> {{ mensagem }}</p>
+
+    <p style="font-size: 12px">
+        {{nomeArquivo || 'Nenhum arquivo selecionado.'}}
+    </p>
+
+    <button mat-mini-fab color="primary" (click)="fileUpload.click()">
+        <mat-icon>upload_file</mat-icon>
+    </button>
+</div>

@@ -1,0 +1,12 @@
+div mat-form-field {
+    width: 100%;
+    display: block;
+}
+
+h1 {
+    text-align: center;
+}
+
+.div_button {
+    justify-content: center;
+}

@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Editar</h1>
+<div mat-dialog-content> 
+  <mat-form-field appearance="fill">
+    <mat-label>Descrição</mat-label>
+    <textarea matInput [(ngModel)]="usuario.descricao"></textarea>
+  </mat-form-field>
+</div>
+<div class="button" mat-dialog-actions>
+  <button class="send" mat-raised-button (click)="onSucess()" color="primary" mat-dialog-close>Salvar</button>
+  <button class="cancel" mat-raised-button mat-dialog-close cdkFocusInitial color="warn">Cancelar</button>
+</div>

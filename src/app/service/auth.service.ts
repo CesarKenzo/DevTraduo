@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 
+import { Usuario } from '../model/usuario';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  public loginResponse?: string;
+  public loginResponse?: Usuario;
 
   public clear(): void {
     this.loginResponse = undefined;
