@@ -30,7 +30,6 @@ mat-card img {
 }
 
 
-
 .detalhes {
     border: 1px solid;
 }
@@ -40,4 +39,15 @@ mat-card img {
     right: 0%;
     bottom: 0%;
     margin: 1%;
+}
+
+.button_open {
+    display: block;
+}
+
+
+.div_botao {
+    width: 40%;
+    height: 80%;
+    margin-bottom: 8px;
 }

@@ -34,7 +34,10 @@ body {
     font-size: 9px;
 }
 
-
+.mat-typography .insignia {
+    width: 80%;
+    height: 80%;
+}
 
 
 

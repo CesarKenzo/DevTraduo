@@ -17,6 +17,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatBadgeModule} from '@angular/material/badge';
+
 
 @NgModule({
   exports: [
@@ -37,7 +39,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatChipsModule,
     MatTabsModule,
     MatProgressBarModule,
-    NgbModule
+    NgbModule,
+    MatBadgeModule
 
   ]
 })

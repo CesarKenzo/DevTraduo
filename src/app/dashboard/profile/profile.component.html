@@ -3,7 +3,6 @@
 <body>
 
     <div class="superior">
-
         <mat-card class="example-card1">
             <mat-card-title-group>
                 <mat-card-title>{{ nome }}</mat-card-title>
@@ -19,8 +18,8 @@
             </mat-card-content>
         </mat-card>
         <mat-card class="example-card2">
-            <img
-                src="https://previews.123rf.com/images/robuart/robuart1902/robuart190200684/116762560-golden-reward-with-stars-and-ribbons-medal-prize-icon-with-modern-concept-and-simple-logo-shape-in-f.jpg">
+            <div matBadge="4" matBadgeSize="large" class="demo-section">Insígnia de Bronze</div>
+            <img class="insignia" src="../../../assets/porta-distintivo-escrivao-de-policia-removebg-preview.png">
         </mat-card>
     </div>
 
@@ -36,6 +35,7 @@
                 </button>
             </div>
         </mat-card>
+        <div class="div_botao">
         <button mat-button (click)="openTranslation()">
             <mat-icon>article</mat-icon>Translation
         </button>
@@ -45,6 +45,7 @@
         <button mat-button (click)="openPosts()">
             <mat-icon>view_list</mat-icon>Posts
         </button>
+    </div>
     </div>
 </body>
 
