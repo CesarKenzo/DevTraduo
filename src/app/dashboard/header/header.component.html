@@ -7,7 +7,7 @@
                 <mat-icon class="material-icons md-light">menu</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
-                <button mat-menu-item>
+                <button mat-menu-item (click)="navegar('dashboard/home')">
                     <mat-icon>home</mat-icon>
                     <span>Home</span>
                 </button>
@@ -15,7 +15,7 @@
                     <mat-icon>trending_up</mat-icon>
                     <span>Trending</span>
                 </button>
-                <button mat-menu-item>
+                <button mat-menu-item (click)="navegar('dashboard/create/post')">
                     <mat-icon>post_add</mat-icon>
                     <span>Postar</span>
                 </button>
@@ -23,13 +23,9 @@
                     <mat-icon>notifications</mat-icon>
                     <span>Notificações</span>
                 </button>
-                <button mat-menu-item>
-                    <mat-icon>settings</mat-icon>
-                    <span>Configurações</span>
-                </button>
             </mat-menu>
             <li>
-                <a href="index.html">
+                <a href="/dashboard/home">
                     <h1 class="logo_title">DevTraduo</h1>
                 </a>
             </li>
@@ -39,12 +35,12 @@
                 <input matInput type="text">
             </mat-form-field>
             <button class="botao_superior" mat-mini-fab style="left: 470px; bottom: 4px; background-color: transparent">
-                <mat-icon>chat</mat-icon>
+                <a href="https://chat-app-redes.herokuapp.com/"><mat-icon>chat</mat-icon></a>
             </button>
             <button class="botao_superior" mat-mini-fab style="left: 490px; bottom: 4px; background-color: transparent">
                 <mat-icon>notifications</mat-icon>
             </button>
-            <button class="botao_superior" mat-mini-fab style="left: 510px; bottom: 4px; background-color: transparent;">
+            <button class="botao_superior" mat-mini-fab style="left: 510px; bottom: 4px; background-color: transparent;" (click)="navegar('dashboard/create/post')">
                 <mat-icon>post_add</mat-icon>
             </button>
             <button class="botao_superior" mat-mini-fab style="left: 530px; bottom: 4px; background-color: transparent;" (click)="navegar('dashboard/profile')">

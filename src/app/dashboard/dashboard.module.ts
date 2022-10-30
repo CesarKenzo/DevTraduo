@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     HeaderComponent,
     FooterComponent,
     ProfileComponent,
-    UploadFileComponent
+    UploadFileComponent,
+    CreatePostComponent
   ],
   imports: [
     CommonModule,

@@ -6,17 +6,26 @@ body {
 .final {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    height: 400px;
+    justify-content: center;
+    height: 40vh;
 }
 
 
 .example-card1,
-.example-card2,
-.detalhes {
+.example-card2 {
     width: 40%;
     height: 80%;
     margin-bottom: 8px;
+}
+
+.detalhes {
+    width: 80%;
+    height: 80%;
+    margin-bottom: 8px;
+}
+
+.example-card1 {
+    background-color: #c4d4dc;
 }
 
 mat-card img {
@@ -45,9 +54,20 @@ mat-card img {
     display: block;
 }
 
+.tradu_exp_post {
+    text-align: end;
+}
 
-.div_botao {
-    width: 40%;
-    height: 80%;
-    margin-bottom: 8px;
+.example-card1 img {
+    background-color: #aaa;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.example-card1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }

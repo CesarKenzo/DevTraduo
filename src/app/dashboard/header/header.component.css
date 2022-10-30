@@ -110,3 +110,7 @@
     align-items: center;
     background-color: #FFF;
   }
+
+.botao_superior a {
+    color: #ffffff;
+}
