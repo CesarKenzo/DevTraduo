@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+    background-color: #c4d4dc;
+ }
+ 
+ mat-form-field {
+     width: 100%;
+     margin-top: 20%;
+ }
+ 
+ mat-card {
+     max-width: 100%;
+     margin: 2em auto;
+     text-align: center;
+ }
+ 

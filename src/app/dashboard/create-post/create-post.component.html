@@ -1,7 +1,23 @@
 <app-header></app-header>
 
 <body>
-    <p>create-post works!</p>
+    <div class="form">
+        <mat-card>
+            <mat-card-content>
+                <form [formGroup]="form">
+                    <mat-form-field>
+                        <input matInput type="text" placeholder="Digite o assunto do post" formControlName="assunto">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Texto</mat-label>
+                        <textarea matInput formControlName="texto"></textarea>
+                      </mat-form-field>
+                </form>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="publicar()">Publicar</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </body>
-
 <app-footer></app-footer>
