@@ -12,16 +12,13 @@ export class CreatePostComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
-      assunto: [''],
+      categoria: [''],
       texto: ['']
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  public publicar(){
-    
-  }
+  public publicar(){}
 
 }
