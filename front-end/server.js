@@ -4,10 +4,10 @@ const app = express();
 
 const PORT = process.env.PORT || 8080;
 
-app.use(express.static(__dirname + '/dist/dev-traduo/'));
+app.use(express.static(__dirname + '/dist/front-end/'));
 
 app.get('/*', (req,res) => {
-    res.sendFile(__dirname + '/dist/dev-traduo/index.html');
+    res.sendFile(__dirname + '/dist/front-end/index.html');
 });
 
 app.listen(PORT, () =>{
