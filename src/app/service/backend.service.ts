@@ -13,7 +13,8 @@ import { Usuario } from '../model/usuario';
 export class BackendService {
 
   private readonly API_PESSOAS = '/assets/pessoas.json';
-  private readonly API_POST = '/assets/posts.json';
+  private readonly API_POST = 'http://localhost:3000/posts';
+  //private readonly API_POST = '/assets/posts.json';
   private readonly API_CADASTRO = '/assents/cadastro.json';
   
   LS_CHAVE: string = "usuarioLogado";
