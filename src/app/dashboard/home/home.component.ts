@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { BackendService } from 'src/app/service/backend.service';
+import { Post } from '../../model/post'
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  postList: Post[] = [];
+
+  constructor(
+    private backendService: BackendService,
+  ) { }
 
   ngOnInit(): void {
+    this.backendService.listPost().subscribe((postList) => {
+      this.postList = postList
+    })
   }
 
 }
