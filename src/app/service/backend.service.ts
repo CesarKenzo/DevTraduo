@@ -5,6 +5,7 @@ import { delay, first, Observable, tap } from 'rxjs';
 import { AuthService } from './auth.service';
 import { Login } from '../model/login';
 import { Usuario } from '../model/usuario';
+import { Post } from '../model/post';
 
 
 @Injectable({
@@ -70,6 +71,14 @@ export class BackendService {
     );
   }
 
+  //carregar os posts de todos os usuarios
+  public findPostById(id: number) {
+    return this.httpClient.get<Post>(`${this.API_POST}/${id}`).pipe(
+      first(),
+      delay(1000),
+      tap(diagnosticos => console.log(diagnosticos))
+    );
+  }
 
   save(record: Usuario) {
     console.log(record);
