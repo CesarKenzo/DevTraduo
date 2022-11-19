@@ -5,7 +5,9 @@
     </div>
 
     <main class="container">
-        <h2>Login</h2>
+        <div class="login-label-area">
+            <h2>Login</h2>
+        </div>
         <form [formGroup]="form">
             <div class="input-field">
                 <input matInput type="text" name="username" id="username"
@@ -18,24 +20,30 @@
                 <div class="underline"></div>
             </div>
 
-            <input type="submit" value="Log in" (click) = "logar()">
-            <input type="submit" value="Sign up" (click)="openDialog()">
+            <div class="input-area">
+                <div class="input-buttons">
+                    <input type="submit" value="Log in" (click) = "logar()">
+                    <input type="submit" value="Sign up" (click)="openDialog()">
+                </div>
+            </div>
         </form>
 
         <div class="footer">
             <span>Or Connect With Social Media</span>
-            <div class="social-fields">
+            <div class="social-field">
                 <div class="social-field twitter">
-                    <a href="#">
+                    <a href="#" class="login-social-label">
                         <i class="fab fa-twitter"></i>
                         Sign in with Twitter
                     </a>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png" alt="" class="social-media-icon">
                 </div>
                 <div class="social-field facebook">
-                    <a href="#">
+                    <a href="#" class="login-social-label">
                         <i class="fab fa-facebook-f"></i>
                         Sign in with Facebook
                     </a>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670032.png" alt="" class="social-media-icon">
                 </div>
             </div>
         </div>

@@ -19,17 +19,52 @@ body {
 
 main.container {
     background: white;
-    min-width: 320px;
+    min-width: 50%;
     min-height: 40vh;
+    width: 50%;
     padding: 2rem;
+    padding-bottom: 0;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 }
+
+
+.input-field .underline::before, 
+.input-field .underline::after, 
+.input-field input,
+.input-area,
+.login-label-area,
+.footer {
+    width: 100%;
+    
+}
+
+/********************
+*                   *
+*   Dev-Traduo Img  *
+*                   *
+*********************/
+
+.img_dev_traduo img{
+    height: 20%;
+    width: 20%;
+}
+
+.img_dev_traduo {
+    text-align: center;
+}
+
+/********************
+*                   *
+*    Login Label    *
+*                   *
+*********************/
 
 main h2 {
     font-weight: 600;
     margin-bottom: 2rem;
     position: relative;
+    font-size: 1.4em;
 }
 
 main h2::before {
@@ -43,6 +78,12 @@ main h2::before {
     background: #74aa57;
 }
 
+/********************
+*                   *
+*    Input Fields   *
+*                   *
+*********************/
+
 form {
     display: flex;
     flex-direction: column;
@@ -54,13 +95,12 @@ form {
 
 form .input-field:first-child {
     margin-bottom: 1.5rem;
-}
+}   
 
 .input-field .underline::before {
     content: '';
     position: absolute;
     height: 1px;
-    width: 100%;
     bottom: -5px;
     left: 0;
     background: rgba(0, 0, 0, 0.2);
@@ -70,7 +110,6 @@ form .input-field:first-child {
     content: '';
     position: absolute;
     height: 1px;
-    width: 100%;
     bottom: -5px;
     left: 0;
     background: #74aa57;
@@ -85,19 +124,24 @@ form .input-field:first-child {
 
 .input-field input {
     outline: none;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: rgba(0, 0, 0, 0.7);
-    width: 100%;
 }
 
 .input-field input::placeholder {
     color: rgba(0, 0, 0, 0.5);
 }
 
+/********************
+*                   *
+*    Form Buttons   *
+*                   *
+*********************/
+
 form input[type="submit"] {
-    margin-top: 2rem;
     padding: 0.4rem;
     width: 100%;
+    margin: 1%;
     background: linear-gradient(to right, #74aa57, rgb(180, 180, 180));
     cursor: pointer;
     color: white;
@@ -107,30 +151,61 @@ form input[type="submit"] {
     transition: all 0.3s ease;
 }
 
+.input-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.input-buttons {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 form input[type="submit"]:hover {
     letter-spacing: 0.5px;
     background: linear-gradient(to right, #74aa57, rgb(180, 180, 180));
 }
 
+/********************
+*                   *
+*    Social Media   *
+*                   *
+*********************/
+
 .footer {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    
     flex-direction: column;
     margin-top: 1rem;
 }
 
 .footer span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     color: rgba(0, 0, 0, 0.7);
     font-size: 0.8rem;
-    text-align: center;
+    width: 100%;
 }
 
 .footer .social-field {
-    padding: 0.4rem;
+    display: block;
+
     border-radius: 4px;
     font-size: 0.85rem;
-    width: 100%;
     cursor: pointer;
-    margin-top: 1rem;
+
+    padding-top: 1rem;
+    margin-bottom: 5%;
+
+    width: 30%;
 }
 
 .footer .social-field a i {
@@ -143,19 +218,30 @@ form input[type="submit"]:hover {
     color: white;
 }
 
-.footer .social-field.twitter {
-    background: linear-gradient(to right, #56a7f2, #468aca);
+.footer .social-field.twitter,
+.footer .social-field.facebook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
+
+.footer .social-field.twitter {
+    background: linear-gradient(to right, #56a7f2, #468aca); 
+}
+
+.social-media-icon {
+    width: 50px;
+    margin-bottom: 5%;
+    margin-left: 5%;
+}
+
+.login-social-label {
+    padding-bottom: 5%;
+    font-size: 1.2em;
+}
+
 
 .footer .social-field.facebook {
     background: linear-gradient(to right, #1e3c72, #2a5298);
-}
-
-.img_dev_traduo img{
-    height: 200px;
-    width: 200px;
-}
-
-.img_dev_traduo {
-    text-align: center;
 }
