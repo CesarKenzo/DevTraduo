@@ -1,8 +1,6 @@
 body {
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin: 0;
     background-color: #053d58;
 }
 
@@ -21,6 +19,7 @@ body {
 
 .form {
     width: 50%;
+    margin-top: 2%;
 }
  
 mat-form-field {
