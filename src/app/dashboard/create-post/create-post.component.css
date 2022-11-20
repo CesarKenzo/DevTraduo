@@ -1,18 +1,43 @@
 body {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     margin: 0;
-    background-color: #c4d4dc;
- }
+    background-color: #053d58;
+}
+
+.text-field {
+    margin-top: 0;
+}
+
+.text-area-label {
+    padding-bottom: 5px;
+}
+
+.text-area {
+    height: 300px;
+    margin-top: 10px;
+}
+
+.form {
+    width: 50%;
+}
  
- mat-form-field {
-     width: 100%;
-     margin-top: 20%;
- }
+mat-form-field {
+    width: 100%;
+    margin-top: 2.5%;
+    height: 50px;
+    font-size: 1.5em;
+}
  
- mat-card {
-     max-width: 100%;
-     margin: 2em auto;
-     text-align: center;
- }
+mat-card {
+    max-width: 100%;
+    margin: 2em auto;
+    text-align: center;
+}
+
+.button {
+    font-size: 25px;
+    height: 50px;
+    width: 15%;
+}

@@ -1,51 +1,51 @@
 <app-header></app-header>
 
 <body>
-    <div class="form">
-        <mat-card>
-            <mat-card-content>
-                <form [formGroup]="form">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Categoria</mat-label>
-                        <mat-select matInput formControlName="categoria">
-                          <mat-option value="Cloud computing">Cloud computing</mat-option>
-                          <mat-option value="Segurança da informação">Segurança da informação</mat-option>
-                          <mat-option value="Arquitetura">Arquitetura</mat-option>
-                          <mat-option value="Programação">Programação</mat-option>
-                          <mat-option value="IoT">IoT</mat-option>
-                          <mat-option value="Inteligência artificial">Inteligência artificial</mat-option>
-                          <mat-option value="Business intelligence">Business intelligence</mat-option>
-                          <mat-option value="Big Data">Big Data</mat-option>
-                          <mat-option value="Projetos">Projetos</mat-option>
-                          <mat-option value="Suporte Técnico">Suporte Técnico</mat-option>
-                        </mat-select>
-                      </mat-form-field>
-                    <mat-form-field appearance="fill">
-                        <mat-label>Idioma</mat-label>
-                        <mat-select matInput formControlName="idioma">
-                          <mat-option value="Inglês">Inglês</mat-option>
-                          <mat-option value="Chinês">Chinês</mat-option>
-                          <mat-option value="Espanhol">Espanhol</mat-option>
-                          <mat-option value="Francês">Francês</mat-option>
-                          <mat-option value="Árabe">Árabe</mat-option>
-                          <mat-option value="Russo">Russo</mat-option>
-                          <mat-option value="Alemão">Alemão</mat-option>
-                          <mat-option value="Japonês ">Japonês</mat-option>
-                          <mat-option value="Bengali">Bengali</mat-option>
-                          <mat-option value="Hindi">Hindi</mat-option>
-                          <mat-option value="Indonésio ">Indonésio</mat-option>
-                        </mat-select>
-                      </mat-form-field>
-                    <mat-form-field appearance="fill">
-                        <mat-label>Texto</mat-label>
-                        <textarea matInput formControlName="texto"></textarea>
-                      </mat-form-field>
-                </form>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-raised-button color="primary" (click)="publicar()">Publicar</button>
-            </mat-card-actions>
-        </mat-card>
-    </div>
+  <div class="form">
+    <mat-card>
+      <mat-card-content>
+        <form [formGroup]="form">
+          <mat-form-field appearance="fill" class="text-field">
+            <mat-label class="text-area-label">Write here a text that you want to people translate for you.</mat-label>
+            <textarea matInput formControlName="texto" class="text-area"></textarea>
+          </mat-form-field>
+          <mat-form-field appearance="fill"> 
+            <mat-label>Text's subject</mat-label>
+            <mat-select matInput formControlName="categoria">
+              <mat-option value="Cloud computing">Cloud computing</mat-option>
+              <mat-option value="Segurança da informação">Segurança da informação</mat-option>
+              <mat-option value="Arquitetura">Arquitetura</mat-option>
+              <mat-option value="Programação">Programação</mat-option>
+              <mat-option value="IoT">IoT</mat-option>
+              <mat-option value="Inteligência artificial">Inteligência artificial</mat-option>
+              <mat-option value="Business intelligence">Business intelligence</mat-option>
+              <mat-option value="Big Data">Big Data</mat-option>
+              <mat-option value="Projetos">Projetos</mat-option>
+              <mat-option value="Suporte Técnico">Suporte Técnico</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Language which inserted text should be translate to.</mat-label>
+            <mat-select matInput formControlName="idioma">
+              <mat-option value="Inglês">Inglês</mat-option>
+              <mat-option value="Chinês">Chinês</mat-option>
+              <mat-option value="Espanhol">Espanhol</mat-option>
+              <mat-option value="Francês">Francês</mat-option>
+              <mat-option value="Árabe">Árabe</mat-option>
+              <mat-option value="Russo">Russo</mat-option>
+              <mat-option value="Alemão">Alemão</mat-option>
+              <mat-option value="Japonês ">Japonês</mat-option>
+              <mat-option value="Bengali">Bengali</mat-option>
+              <mat-option value="Hindi">Hindi</mat-option>
+              <mat-option value="Indonésio ">Indonésio</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="publicar()" class="button">Publicar</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </body>
 <app-footer></app-footer>
