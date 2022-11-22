@@ -14,9 +14,11 @@ import { MyDialogEditarComponent } from 'src/app/shared/components/my-dialog-edi
 export class ProfileComponent implements OnInit {
 
   longText: string = '';
-  nome: string = 'Marcos';
-  conhecimentos: string = 'Java, JavaScritp, Ruby e Angular.';
+  nome: string = 'Marcos Costa da Silva';
+  profissao: string = 'PhD em ciência da computação pela Universidade de Carnegie Mellon e especialista em segurança no projeto Network Attached Secure Disks.'
+  conhecimentos: string = 'Java, JavaScript, Ruby e Angular.';
   conteudo: string = 'programador iniciante.';
+  areas: string[]  = ['asd', 'gddfb'];
 
 
   constructor(public dialog: MatDialog) {}

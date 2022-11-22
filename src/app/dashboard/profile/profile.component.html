@@ -1,48 +1,44 @@
 <app-header></app-header>
-
 <body>
-
-    <div class="tradu_exp_post">
-        <button mat-button (click)="openTranslation()">
-            <mat-icon>article</mat-icon>Translation
-        </button>
-        <button mat-button (click)="openExplanation()">
-            <mat-icon>handshake</mat-icon>Explanation
-        </button>
-        <button mat-button (click)="openPosts()">
-            <mat-icon>view_list</mat-icon>Posts
-        </button>
-    </div>
-
-    <div class="superior">
-        <div class="example-card1">
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stick_Figure.svg/170px-Stick_Figure.svg.png">
-            <span>
-                <h1> {{ nome }} </h1>
-                <h2> {{ conhecimentos }} </h2>
-                <app-upload-file></app-upload-file>
-            </span>
+    <div class="left-vertical-container">
+        <div class="dev-traduo-icon">
+            <img src="../../assets/devTraduo_qualidade.png" alt="logo dev traduo" id="dev-traduo-icon"> 
         </div>
-        <mat-card class="example-card2">
-            <div matBadge="4" matBadgeSize="large" class="demo-section">Insígnia de Bronze</div>
-            <img class="insignia" src="../../../assets/porta-distintivo-escrivao-de-policia-removebg-preview.png">
-        </mat-card>
-    </div>
-
-    <div class="final">
-
-        <mat-card class="detalhes">
-            <div class="conteudo">
-                {{ conteudo }}
-            </div>
-            <div class="edit">
-                <button mat-stroked-button (click)="openDialog()" color="primary" style="border: 1px solid blue">
+        <div class="image-profile">
+            <img src="https://cdn-icons-png.flaticon.com/512/3033/3033143.png" alt="" id="image-profile">
+            <img src="../../../assets/porta-distintivo-escrivao-de-policia-removebg-preview.png" id="insigia-image">
+            <app-upload-file id="upload-image-profile-button"></app-upload-file>
+        </div>
+        <div class="user-name">
+            <h1 id="user-name"> {{ nome }} </h1>
+        </div>
+        <div class="user-about">
+            <p id="occupation"> {{ profissao }} </p>
+            <div class="user-about-edit-button">
+                <button mat-stroked-button (click)="openDialog()" color="primary" style="border: 1px solid rgb(255, 255, 255)">
                     <mat-icon color="primary">edit</mat-icon>Editar
                 </button>
             </div>
-        </mat-card>
+            <ul id="areas">
+                <li>Data Storing</li>
+                <li>Perfomance Profiling</li>
+                <li>Compilers Optimization</li>
+                <li>Operation Systems</li>
+                <li>Parallel Computing</li>
+            </ul>
+        </div>
+    </div>
 
+    <div class="right-vertical-container">
+        <button mat-button (click)="openTranslation()">
+            <mat-icon class="user-data-icon">article</mat-icon>Translations
+        </button>
+        <button mat-button (click)="openExplanation()">
+            <mat-icon class="user-data-icon">handshake</mat-icon>Explanations
+        </button>
+        <button mat-button (click)="openPosts()">
+            <mat-icon class="user-data-icon">view_list</mat-icon>Posts
+        </button>
     </div>
 </body>
 <app-footer></app-footer>
