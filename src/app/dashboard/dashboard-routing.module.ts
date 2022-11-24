@@ -10,7 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
   const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'profile', component: ProfileComponent},
-    {path: 'post', component: PostComponent},
+    {path: 'post/:id', component: PostComponent},
     {path: 'create/post', component: CreatePostComponent},
 ];
 
