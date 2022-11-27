@@ -1,8 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import UsersJson from 'src/assets/usuario.json';
 
-import { Usuario } from 'src/app/model/usuario';
 
+interface USER{
+  id: number;
+  nome: string;
+  login: string;
+  senha: string;
+  profissao: string;
+  conhecimentos: string;
+  conteudo: string;
+  areas: string[];
+}
 
 @Component({
   selector: 'app-my-dialog-editar',
@@ -11,7 +21,7 @@ import { Usuario } from 'src/app/model/usuario';
 })
 export class MyDialogEditarComponent implements OnInit {
 
-  usuario = new Usuario();
+  usuario:USER[] = UsersJson;
 
   constructor(private snackBar: MatSnackBar) { }
 
@@ -19,7 +29,7 @@ export class MyDialogEditarComponent implements OnInit {
 
   public onSucess() {
     this.snackBar.open('Descrição Salva com Sucesso!', '', {duration: 3000});
-    console.log(this.usuario.descricao);
+    console.log(this.usuario[0].profissao);
   }
 
   public onError() {
