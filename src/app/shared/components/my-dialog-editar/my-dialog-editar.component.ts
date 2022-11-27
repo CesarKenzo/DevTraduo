@@ -19,6 +19,7 @@ export class MyDialogEditarComponent implements OnInit {
 
   public onSucess() {
     this.snackBar.open('Descrição Salva com Sucesso!', '', {duration: 3000});
+    console.log(this.usuario.descricao);
   }
 
   public onError() {

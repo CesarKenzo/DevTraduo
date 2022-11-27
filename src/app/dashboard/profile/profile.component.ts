@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import usuario from '../../../assets/usuario.json';
 
 import { DialogDataExplicacaoComponent } from 'src/app/shared/components/dialog-data-explicacao/dialog-data-explicacao.component';
 import { DialogDataPostsComponent } from 'src/app/shared/components/dialog-data-posts/dialog-data-posts.component';
@@ -12,6 +13,7 @@ import { MyDialogEditarComponent } from 'src/app/shared/components/my-dialog-edi
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+
 
   longText: string = '';
   nome: string = 'Marcos Costa da Silva';
@@ -41,7 +43,7 @@ export class ProfileComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(MyDialogEditarComponent, {});
     dialogRef.afterClosed().subscribe(result => {
-      console.log('dialog fechado!' + result);
+      console.log('dialog fechaaado!' + result);
     });
   }
 
