@@ -10,12 +10,18 @@ import { SharedModule } from './shared/shared.module';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { FlagDialogComponent } from './shared/components/flag-dialog/flag-dialog.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { ShareDialogComponent } from './shared/components/share-dialog/share-dialog.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    FlagDialogComponent,
+    ShareDialogComponent
   
   ],
   imports: [
@@ -26,10 +32,11 @@ import { DashboardModule } from './dashboard/dashboard.module';
     SharedModule,
     FormsModule,
     HttpClientModule,
-    DashboardModule
-    
+    DashboardModule,
+    MatInputModule, 
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -3,7 +3,8 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { BackendService } from 'src/app/service/backend.service';
 import { Post } from '../../model/post'
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { FlagDialogComponent } from '../../shared/components/flag-dialog/flag-dialog.component';
+import { ShareDialogComponent } from 'src/app/shared/components/share-dialog/share-dialog.component';
 
 @Component({
   selector: 'app-post',
@@ -23,6 +24,8 @@ export class PostComponent implements OnInit {
   }
 
   filePath: string | undefined;
+  flagPath: string | undefined;
+  sharePath: string | undefined;
 
   constructor(
     private backendService: BackendService,
@@ -50,6 +53,31 @@ export class PostComponent implements OnInit {
     })
   }
 
+  openflagDialog(): void {
+    const MatdialogRef = this.dialog.open(FlagDialogComponent, {
+      width: '500px',
+      data: {name: this.flagPath},
+    });
+  
+    MatdialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.flagPath = result;
+    });
+  }
+
+  openShareDialog(): void {
+    const MatdialogRef = this.dialog.open(ShareDialogComponent, {
+      width: '650px',
+      height: '230px',
+      data: {name: this.sharePath},
+    });
+  
+    MatdialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.sharePath = result;
+    });
+  }
+
 }
 
 @Component({
@@ -65,3 +93,5 @@ export class DialogOverviewExampleDialog {
     this.dialogRef.close();
   }
 }
+
+
