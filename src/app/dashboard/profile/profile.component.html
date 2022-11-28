@@ -10,10 +10,10 @@
             <app-upload-file id="upload-image-profile-button"></app-upload-file>
         </div>
         <div class="user-name">
-            <h1 id="user-name"> {{ nome }} </h1>
+            <h1 id="user-name"> {{ usuario.nome }} </h1>
         </div>
         <div class="user-about">
-            <p id="occupation"> {{ profissao }} </p>
+            <p id="occupation"> {{ usuario.profissao }} </p>
             <div class="user-about-edit-button">
                 <button mat-stroked-button (click)="openDialog()" color="primary" style="border: 1px solid rgb(255, 255, 255)">
                     <mat-icon color="primary">edit</mat-icon> Editar

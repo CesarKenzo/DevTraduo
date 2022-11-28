@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import UsersJson from 'src/assets/usuario.json';
+import UsersJson from 'src/assets/db.json';
 
 import { DialogDataExplicacaoComponent } from 'src/app/shared/components/dialog-data-explicacao/dialog-data-explicacao.component';
 import { DialogDataPostsComponent } from 'src/app/shared/components/dialog-data-posts/dialog-data-posts.component';
 import { DialogDataTraducaoComponent } from 'src/app/shared/components/dialog-data-traducao/dialog-data-traducao.component';
 import { MyDialogEditarComponent } from 'src/app/shared/components/my-dialog-editar/my-dialog-editar.component';
+import { UserService } from 'src/app/service/user.service';
+import { Usuario } from 'src/app/model/usuario';
+import { AuthService } from 'src/app/service/auth.service';
 
 interface USER{
   id: number;
@@ -26,19 +29,40 @@ interface USER{
 export class ProfileComponent implements OnInit {
 
 
-  users:USER[] = UsersJson;
-
-  longText: string = '';
-  nome: string = this.users[0].nome;
-  profissao: string = this.users[0].profissao;
-  conhecimentos: string = this.users[0].conhecimentos;
-  conteudo: string = this.users[0].conteudo;
-  areas: string[]  = this.users[0].areas;
 
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private _userService: UserService, private _authService:AuthService) {}
+
+  public usuarios: Usuario[];
+  public usuario: Usuario;
 
   ngOnInit(): void {
+    this._userService.getUsers()
+    .subscribe(
+      retorno => {
+        this.usuarios = retorno.map (item => {
+          return new Usuario(
+            item.id,
+            item.nome,
+            item.login,
+            item.senha,
+            item.profissao,
+            item.conhecimentos,
+            item.conteudo,
+            item.areas
+          )
+        })
+      }
+    );
+    
+    this._userService.buscarPorId(1)
+    .subscribe(
+      retorno => {
+        this.usuario = retorno;
+        this._authService.logIn(this.usuario);
+      }
+    );
+
   }
 
   openTranslation() {

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import UsersJson from 'src/assets/usuario.json';
+import { UserService } from 'src/app/service/user.service';
+import { Usuario } from 'src/app/model/usuario';
+import { AuthService } from 'src/app/service/auth.service';
 
 
 interface USER{
@@ -21,15 +23,27 @@ interface USER{
 })
 export class MyDialogEditarComponent implements OnInit {
 
-  usuario:USER[] = UsersJson;
+  constructor(private snackBar: MatSnackBar, private _userService: UserService, private _authService: AuthService) { }
 
-  constructor(private snackBar: MatSnackBar) { }
+  public usuario: Usuario;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if(this._authService.getSessionId() != -1){
+      this._userService.buscarPorId(this._authService.getSessionId())
+        .subscribe(
+          retorno => {
+          this.usuario = retorno;
+        }
+      );
+    }
+  }
 
   public onSucess() {
-    this.snackBar.open('Descrição Salva com Sucesso!', '', {duration: 3000});
-    console.log(this.usuario[0].profissao);
+    this._userService.editarUsuario(this.usuario).subscribe(retorno => {
+      if(retorno) this.snackBar.open('Descrição Salva com Sucesso!', '', {duration: 3000});
+      else this.onError();
+    });
+    console.log(this.usuario.profissao);
   }
 
   public onError() {

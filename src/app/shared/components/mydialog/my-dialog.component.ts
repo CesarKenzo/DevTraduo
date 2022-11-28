@@ -11,12 +11,13 @@ import { BackendService } from 'src/app/service/backend.service';
 })
 export class MydialogComponent implements OnInit {
 
-  usuario = new Usuario();
 
   constructor(private backendService: BackendService, private snackBar: MatSnackBar){
   
     this.ativarEnter();
   }
+
+  public usuario: Usuario;
 
   ngOnInit(): void {}
 

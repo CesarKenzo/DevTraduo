@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nome": "Jorge",
+      "login": "Shyrlei2002",
+      "senha": "testesenha",
+      "profissao": "PhD em ciência da computação pela Universidade de Carnegie Mellon e especialista em segurança no projeto Network Attached Secure Disks.",
+      "conhecimentos": "Java, JavaScript, Ruby e Angular.",
+      "conteudo": "programador iniciante.",
+      "areas": [
+        "asd",
+        "gddfb"
+      ]
+    }
+  ]
+}
