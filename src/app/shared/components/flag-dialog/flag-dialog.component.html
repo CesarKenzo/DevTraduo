@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Reportar Post</h1>
+<div mat-dialog-content>
+    <mat-form-field apperance="outline">
+        <mat-select placeholder="Selecione o Problema">
+            <mat-option value="Discurso de ódio">Discurso de ódio</mat-option>
+            <mat-option value="Desinformação">Desinformação</mat-option>
+            <mat-option value="Spam">Spam</mat-option>
+            <mat-option value="Tradução Incoerente">Tradução Incoerente</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field apperance="outline">
+        <mat-label>Caso não encontre a opção acima, descreva aqui</mat-label>
+        <textarea matInput placeholder="Ex. O post..."></textarea>
+      </mat-form-field>
+</div>
+<div mat-dialog-action [align]="'end'">
+<button mat-raised-button color="warn" mat-dialog-close>Fechar</button>
+<button style="margin-left: 8px;" mat-raised-button color="primary" mat-dialog-close>Enviar</button>
+</div>

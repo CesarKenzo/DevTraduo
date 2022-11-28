@@ -20,9 +20,10 @@
                 </mat-card>
             </mat-card-content>
             <mat-card-footer>
-                <button mat-button style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
-                <button mat-button style="background-color: transparent;"><mat-icon >flag</mat-icon></button>
-                <button mat-button style="background-color: transparent;"><mat-icon >share</mat-icon></button>
+                <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
+                <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
+                <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
             </mat-card-footer>
         </mat-card>
     </div>
@@ -43,13 +44,14 @@
                     <mat-icon>person</mat-icon> Usuário X: 
                     </mat-card-title>
                 <mat-card-content>
-                    Explicação ...
+                    Tradução ...
                 </mat-card-content>
                 <mat-card-footer>
-                    <button mat-button style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                    <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                    <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
                     <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
-                    <button mat-button style="background-color: transparent;"><mat-icon >flag</mat-icon></button>
-                    <button mat-button style="background-color: transparent;"><mat-icon >share</mat-icon></button>
+                    <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
+                    <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
                 </mat-card-footer>
             </mat-card>
             <br/>
@@ -58,13 +60,14 @@
                     <mat-icon>person</mat-icon>Usuário Y:  
                 </mat-card-title>
                 <mat-card-content>
-                    Explicação ...
+                    Tradução ...
                 </mat-card-content>
                 <mat-card-footer>
-                    <button mat-button style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                    <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                    <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
                     <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
-                    <button mat-button style="background-color: transparent;"><mat-icon >flag</mat-icon></button>
-                    <button mat-button style="background-color: transparent;"><mat-icon >share</mat-icon></button>
+                    <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
+                    <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
                 </mat-card-footer>
             </mat-card>
             <br/>
@@ -73,13 +76,14 @@
                     <mat-icon>person</mat-icon>Usuário Z:  
                 </mat-card-title>
                 <mat-card-content>
-                    Explicação ...
+                    Tradução ...
                 </mat-card-content>
                 <mat-card-footer>
-                    <button mat-button style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                    <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                    <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
                     <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
-                    <button mat-button style="background-color: transparent;"><mat-icon >flag</mat-icon></button>
-                    <button mat-button style="background-color: transparent;"><mat-icon >share</mat-icon></button>
+                    <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
+                    <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
                 </mat-card-footer>
             </mat-card>
             <br/>
@@ -87,16 +91,49 @@
         <mat-tab label="Explicação">  
             <mat-card>
                 <mat-card-title title="review">
-                    <mat-icon>person</mat-icon>Usuario W: 
+                    <mat-icon>person</mat-icon>Usuario A: 
                 </mat-card-title>
                 <mat-card-content>
-                    Tradução ...
+                    Explicação ...
                 </mat-card-content>
                 <mat-card-footer>
-                    <button mat-button style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                    <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                    <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
                     <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
-                    <button mat-button style="background-color: transparent;"><mat-icon >flag</mat-icon></button>
-                    <button mat-button style="background-color: transparent;"><mat-icon >share</mat-icon></button>
+                    <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
+                    <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
+                </mat-card-footer>
+            </mat-card>
+            <br/>
+            <mat-card>
+                <mat-card-title title="review">
+                    <mat-icon>person</mat-icon>Usuario B: 
+                </mat-card-title>
+                <mat-card-content>
+                    Explicação ...
+                </mat-card-content>
+                <mat-card-footer>
+                    <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                    <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
+                    <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
+                    <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
+                    <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
+                </mat-card-footer>
+            </mat-card>
+            <br/>
+            <mat-card>
+                <mat-card-title title="review">
+                    <mat-icon>person</mat-icon>Usuario C: 
+                </mat-card-title>
+                <mat-card-content>
+                    Explicação ...
+                </mat-card-content>
+                <mat-card-footer>
+                    <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                    <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
+                    <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
+                    <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
+                    <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
                 </mat-card-footer>
             </mat-card>
             <br/>
