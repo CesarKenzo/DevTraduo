@@ -39,3 +39,21 @@
     width: 700px;
     left: 650px;
 }
+
+.mat-button.mat-blue {
+    color: blue;
+ }
+ 
+ .mat-raised-button.mat-blue, .mat-flat-button.mat-blue{
+    background-color: blue;
+    color: white;
+ }
+
+ .mat-button.mat-red {
+    color: red;
+ }
+ 
+ .mat-raised-button.mat-red, .mat-flat-button.mat-red{
+    background-color: red;
+    color: white;
+ }
