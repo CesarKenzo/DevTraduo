@@ -1,4 +1,29 @@
 {
+
+
+  "posts_responses":[
+    {
+      "id": "Jorge2002",
+      "identificador_origin": "Shyrlei2002/post1",
+      "texto_response": "Salve!",
+      "idioma": "Português",
+      "tipo": "Cloud computing",
+      "identificador_post": "response1",
+      "tipo_post": "explanation"
+    }
+  ],
+  "posts":[
+    {
+      "id": "Shyrlei2002",
+      "title": "O que é computação em nuvem?",
+      "createdBy": "Jorge",
+      "language": "Português",
+      "description": "Bom dia!!",
+      "categories": ["Cloud computing", "Architecture"],
+      "likes": 4,
+      "uniqueIDPost": "post1"
+    }
+  ],
   "users": [
     {
       "id": "Shyrlei2002",
