@@ -11,12 +11,12 @@
         <form [formGroup]="form">
             <div class="input-field">
                 <input matInput type="text" name="username" id="username"
-                placeholder="Enter Your Username" formControlName="usuario">
+                placeholder="Enter Your Username" formControlName="usuario" [(ngModel)] = "login_nome">
                 <div class="underline"></div>
             </div>
             <div class="input-field">
                 <input matInput type="password" name="password" id="password"
-                placeholder="Enter Your Password" formControlName="senha">
+                placeholder="Enter Your Password" formControlName="senha" [(ngModel)] = "login_senha">
                 <div class="underline"></div>
             </div>
 

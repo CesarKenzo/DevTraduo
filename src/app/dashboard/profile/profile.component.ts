@@ -9,6 +9,7 @@ import { MyDialogEditarComponent } from 'src/app/shared/components/my-dialog-edi
 import { UserService } from 'src/app/service/user.service';
 import { Usuario } from 'src/app/model/usuario';
 import { AuthService } from 'src/app/service/auth.service';
+import { Router } from '@angular/router';
 
 interface USER{
   id: number;
@@ -28,34 +29,16 @@ interface USER{
 })
 export class ProfileComponent implements OnInit {
 
+  constructor(public dialog: MatDialog,
+      private _userService: UserService,
+      private _authService:AuthService,
+      private router:Router) {}
 
-
-
-  constructor(public dialog: MatDialog, private _userService: UserService, private _authService:AuthService) {}
-
-  public usuarios: Usuario[];
   public usuario: Usuario;
 
   ngOnInit(): void {
-    this._userService.getUsers()
-    .subscribe(
-      retorno => {
-        this.usuarios = retorno.map (item => {
-          return new Usuario(
-            item.id,
-            item.nome,
-            item.login,
-            item.senha,
-            item.profissao,
-            item.conhecimentos,
-            item.conteudo,
-            item.areas
-          )
-        })
-      }
-    );
-    
-    this._userService.buscarPorId(1)
+    if(this._authService.getSessionId() == null) this.router.navigate(['login']);
+    else this._userService.buscarPorId(this._authService.getSessionId()!)
     .subscribe(
       retorno => {
         this.usuario = retorno;

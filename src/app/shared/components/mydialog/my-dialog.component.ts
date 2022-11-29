@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Usuario } from 'src/app/model/usuario';
 import { BackendService } from 'src/app/service/backend.service';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-my-dialog',
@@ -12,17 +13,35 @@ import { BackendService } from 'src/app/service/backend.service';
 export class MydialogComponent implements OnInit {
 
 
-  constructor(private backendService: BackendService, private snackBar: MatSnackBar){
+  constructor(private backendService: BackendService, private snackBar: MatSnackBar, private _userService: UserService){
   
     this.ativarEnter();
   }
 
-  public usuario: Usuario;
+  public nome: string;
+  public login: string;
+  public senha: string;
 
   ngOnInit(): void {}
 
   public onAdd(): void {
-  //this.backendService.save(this.usuario).subscribe(_result => this.onSucess(), _error => this.onError());
+    this._userService.buscarPorId(this.login).subscribe({
+      next: data =>{
+        this.snackBar.open('Já existe um usuário com o login ' + this.login + " em nosso sistema!", '', {duration: 3000});
+      },
+      error: error => {
+        var usuario = new Usuario(this.login, this.nome, this.login, this.senha, "", "", "", ["", ""]);
+        this._userService.criarUsuario(usuario).subscribe({
+          next: data =>{
+            this.onSucess();
+          },
+          error: error => {
+            this.onError();
+            console.log(error.message);
+          }
+        });
+      }
+    });
   }
   
   private onSucess() {

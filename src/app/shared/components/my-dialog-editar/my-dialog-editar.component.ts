@@ -28,8 +28,8 @@ export class MyDialogEditarComponent implements OnInit {
   public usuario: Usuario;
 
   ngOnInit(): void {
-    if(this._authService.getSessionId() != -1){
-      this._userService.buscarPorId(this._authService.getSessionId())
+    if(this._authService.getSessionId() != null){
+      this._userService.buscarPorId(this._authService.getSessionId()!)
         .subscribe(
           retorno => {
           this.usuario = retorno;

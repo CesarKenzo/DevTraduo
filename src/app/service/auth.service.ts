@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 import { Usuario } from '../model/usuario';
 
 
@@ -16,11 +17,12 @@ export class AuthService {
 
   public logIn(usuario: Usuario){
     this.loginResponse = usuario;
+    localStorage.setItem("Usuario", usuario.login);
   }
 
-  public getSessionId() : number{
-   if(this.loginResponse) return this.loginResponse.id;
-   else return -1;
+  public getSessionId() : string | null{
+    if(localStorage.getItem("Usuario") == null) return null;
+    return localStorage.getItem("Usuario");
   }
 
   public isAuthenticated(): boolean {

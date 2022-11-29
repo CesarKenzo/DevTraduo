@@ -6,6 +6,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Login } from '../model/login';
 import { BackendService } from '../service/backend.service';
 import { MydialogComponent } from '../shared/components/mydialog/my-dialog.component';
+import { UserService } from 'src/app/service/user.service';
+import { AuthService } from 'src/app/service/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-login',
@@ -13,7 +17,8 @@ import { MydialogComponent } from '../shared/components/mydialog/my-dialog.compo
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  public login_nome:string;
+  public login_senha:string;
   login: Login = new Login();
   loading: boolean = false;
   form: FormGroup;
@@ -22,8 +27,10 @@ export class LoginComponent implements OnInit {
     private backendService: BackendService,
     private router: Router,
     private formBuilder: FormBuilder, 
-    private dialog: MatDialog
-
+    private dialog: MatDialog,
+    private _userService: UserService,
+    private _authService: AuthService,
+    private snackBar: MatSnackBar
   ) {
 
     this.form = this.formBuilder.group({
@@ -38,7 +45,20 @@ export class LoginComponent implements OnInit {
 
 
   logar(): void {
-    this.router.navigate(['dashboard/home']);
+    this._userService.buscarPorId(this.login_nome).subscribe({
+      next: data => {
+      if(data.senha == this.login_senha){
+        this._authService.logIn(data);
+        this.router.navigate(['dashboard/home']);
+      }else{
+        this.snackBar.open('Senha inválida', '', {duration: 3000});
+      }
+    },
+    error: error => {
+      console.log(error.message);
+      this.snackBar.open('Usuário não cadastrado!', '', {duration: 3000});
+    }
+    });  
   }
 
   openDialog(): void {

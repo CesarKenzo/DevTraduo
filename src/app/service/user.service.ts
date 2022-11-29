@@ -16,8 +16,13 @@ export class UserService {
     return this._httpClient.get<Usuario[]>(this.url);
   }
 
-  buscarPorId(id: number): Observable<Usuario> {
+  buscarPorId(id: String): Observable<Usuario> {
     const url = `${this.url}/${id}`
+    return this._httpClient.get<Usuario>(url);
+  }
+
+  buscarPorLogin(login: string): Observable<Usuario>{
+    const url = `${this.url}/${login}`
     return this._httpClient.get<Usuario>(url);
   }
 

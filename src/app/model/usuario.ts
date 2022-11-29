@@ -1,5 +1,5 @@
 export class Usuario {
-    public id: number;
+    public id: string;
     public nome: string;
     public login: string;
     public senha: string;
@@ -8,7 +8,7 @@ export class Usuario {
     public conteudo: string;
     public areas: string[];
 
-    constructor(id: number, nome: string, login: string, senha: string,
+    constructor(id: string, nome: string, login: string, senha: string,
          profissao: string, conhecimentos: string, conteudo: string, areas: string[]){
 
         this.id = id;
