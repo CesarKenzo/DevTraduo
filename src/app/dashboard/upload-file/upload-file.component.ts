@@ -1,5 +1,6 @@
 import { HttpClient, HttpEventType, HttpProgressEvent } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -13,9 +14,11 @@ export class UploadFileComponent implements OnInit {
   nomeArquivo: string = '';
 
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router:Router) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    if(localStorage.getItem("Usuario") == null) this.router.navigate(['login']);
+  }
 
   // @ts-ignore
   onFileSelected(event) {

@@ -1,8 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { UserService } from 'src/app/service/user.service';
 import { Usuario } from 'src/app/model/usuario';
+import { AuthService } from 'src/app/service/auth.service';
 
+
+interface USER{
+  id: number;
+  nome: string;
+  login: string;
+  senha: string;
+  profissao: string;
+  conhecimentos: string;
+  conteudo: string;
+  areas: string[];
+}
 
 @Component({
   selector: 'app-my-dialog-editar',
@@ -11,14 +23,27 @@ import { Usuario } from 'src/app/model/usuario';
 })
 export class MyDialogEditarComponent implements OnInit {
 
-  usuario = new Usuario();
+  constructor(private snackBar: MatSnackBar, private _userService: UserService, private _authService: AuthService) { }
 
-  constructor(private snackBar: MatSnackBar) { }
+  public usuario: Usuario;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if(this._authService.getSessionId() != null){
+      this._userService.buscarPorId(this._authService.getSessionId()!)
+        .subscribe(
+          retorno => {
+          this.usuario = retorno;
+        }
+      );
+    }
+  }
 
   public onSucess() {
-    this.snackBar.open('Descrição Salva com Sucesso!', '', {duration: 3000});
+    this._userService.editarUsuario(this.usuario).subscribe(retorno => {
+      if(retorno) this.snackBar.open('Descrição Salva com Sucesso!', '', {duration: 3000});
+      else this.onError();
+    });
+    console.log(this.usuario.profissao);
   }
 
   public onError() {

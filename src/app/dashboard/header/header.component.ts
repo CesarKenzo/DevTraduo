@@ -12,10 +12,17 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if(localStorage.getItem("Usuario") == null) this.router.navigate(['login']);
+  }
 
   public navegar(rota: string){
     this.router.navigate([rota]);
+  }
+
+  public logOff(){
+    localStorage.removeItem("Usuario");
+    this.router.navigate(['login']);
   }
 
 }

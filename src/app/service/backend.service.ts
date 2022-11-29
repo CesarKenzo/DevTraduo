@@ -24,12 +24,12 @@ export class BackendService {
   constructor(private httpClient: HttpClient, private authService: AuthService) { }
 
   //efetua o login, buscando no banco
-  public login(request: Login): Observable<Login> {
+  /*public login(request: Login): Observable<Login> {
     const api = '../../assets/login.json';
     return this.httpClient.get<Login>(api).pipe(
       tap((loginResponse) => (this.authService.loginResponse = loginResponse))
     );
-  }
+  }*/
 
   //retorna o usuario logado
   public get usuarioLogado(): Usuario {
