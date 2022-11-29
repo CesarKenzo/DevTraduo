@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-post',
@@ -10,7 +11,7 @@ export class CreatePostComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router:Router) {
     this.form = this.formBuilder.group({
       categoria: [''],
       idioma: [''],
@@ -18,7 +19,9 @@ export class CreatePostComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if(localStorage.getItem("Usuario") == null) this.router.navigate(['login']);
+  }
 
   public publicar(){}
 

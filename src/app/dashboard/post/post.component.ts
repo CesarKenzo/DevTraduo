@@ -44,6 +44,7 @@ export class PostComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(localStorage.getItem("Usuario") == null) this.router.navigate(['login']);
     const id = this.route.snapshot.paramMap.get('id')
     this.backendService.findPostById(parseInt(id!)).subscribe((post) => {
       this.post = post
