@@ -17,6 +17,13 @@ body {
     margin-top: 10px;
 }
 
+.text-area-title {
+    min-height: 30px;
+    max-height: 35px;
+    margin-top: 10px;
+}
+
+
 .form {
     width: 50%;
     margin-top: 2%;
