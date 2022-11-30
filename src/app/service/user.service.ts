@@ -9,7 +9,7 @@ import { Usuario } from '../model/usuario';
 })
 export class UserService {
 
-  private url = "http://localhost:3000/users";
+  private url = "http://localhost:3000/usersDev";
   constructor(private _httpClient: HttpClient) { }
   
   getUsers() : Observable<Usuario[]>{

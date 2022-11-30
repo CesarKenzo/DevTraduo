@@ -8,6 +8,7 @@ import { DialogDataPostsComponent } from './components/dialog-data-posts/dialog-
 import { DialogDataExplicacaoComponent } from './components/dialog-data-explicacao/dialog-data-explicacao.component';
 import { DialogDataTraducaoComponent } from './components/dialog-data-traducao/dialog-data-traducao.component';
 import { MyDialogEditarComponent } from './components/my-dialog-editar/my-dialog-editar.component';
+import { DialogCommentComponent } from './components/dialog-comment/dialog-comment.component';
 
 
 
@@ -17,7 +18,8 @@ import { MyDialogEditarComponent } from './components/my-dialog-editar/my-dialog
     DialogDataPostsComponent,
     DialogDataExplicacaoComponent,
     DialogDataTraducaoComponent,
-    MyDialogEditarComponent
+    MyDialogEditarComponent,
+    DialogCommentComponent
   ],
   imports: [
     CommonModule,

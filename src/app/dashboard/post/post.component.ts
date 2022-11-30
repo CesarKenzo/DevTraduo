@@ -6,6 +6,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FlagDialogComponent } from '../../shared/components/flag-dialog/flag-dialog.component';
 import { ShareDialogComponent } from 'src/app/shared/components/share-dialog/share-dialog.component';
 import { PostService } from 'src/app/service/post.service';
+import { Comment } from 'src/app/model/comment';
+import { CommentService } from 'src/app/service/comment.service';
+import { DialogCommentComponent } from 'src/app/shared/components/dialog-comment/dialog-comment.component';
+import { Usuario } from 'src/app/model/usuario';
 
 @Component({
   selector: 'app-post',
@@ -24,19 +28,31 @@ export class PostComponent implements OnInit {
     likes: 0
   }
 
+  comment: Comment = {
+    postId: 0,
+    userLogin: '',
+    content: '',
+    type: ''
+  }
+
+  translationList: Comment[] = []
+  explanationList: Comment[] = []
+
   public liked: boolean = false;
   public disliked: boolean = false;
 
   filePath: string | undefined;
   flagPath: string | undefined;
   sharePath: string | undefined;
+  commentPath: string | undefined;
 
   constructor(
     private backendService: BackendService,
     private router: Router,
     private route: ActivatedRoute,
     public dialog: MatDialog,
-    private _postService : PostService
+    private _postService : PostService,
+    private commentService: CommentService
     ) { }
 
   openDialog(): void {
@@ -60,11 +76,15 @@ export class PostComponent implements OnInit {
         if(element.id == parseInt(id!)) this.post = element;
       });
     });
+
+    this.commentService.getPosts().subscribe((commentList) => {
+      this.translationList = commentList.filter(c => c.postId == Number.parseInt(id!) && c.type == 'Tradução')
+      this.explanationList = commentList.filter(c => c.postId == Number.parseInt(id!) && c.type == 'Explicação')
+    })
     /*this.backendService.findPostById(parseInt(id!)).subscribe((post) => {
       this.post = post
     })*/
   }
-
 
   postLiked(event: MouseEvent){
     this.liked = true;
@@ -76,6 +96,19 @@ export class PostComponent implements OnInit {
     this.liked = false;
     this.disliked = true;
     this.post.likes--;
+  }
+
+  openCommentDialog(): void {
+    sessionStorage.setItem('postID', this.post.id!.toString())
+    const MatdialogRef = this.dialog.open(DialogCommentComponent, {
+      width: '500px',
+      data: {name: this.commentPath},
+    });
+
+    MatdialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.commentPath = result;
+    });
   }
 
   openflagDialog(): void {
