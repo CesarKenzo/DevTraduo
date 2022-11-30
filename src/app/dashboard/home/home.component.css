@@ -6,7 +6,7 @@ body {
 
 .container{
   max-height: 90%;
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 .column {

@@ -20,6 +20,34 @@
       "categories": [
         "Cloud computing"
       ],
+      "likes": 11
+    },
+    {
+      "id": 2,
+      "title": "One more post!",
+      "createdBy": "Shyrlei2002",
+      "language": "Indonésio",
+      "description": "New post here people!",
+      "categories": [
+        "Big Data",
+        "Projetos",
+        "Suporte Técnico"
+      ],
+      "likes": 12
+    },
+    {
+      "id": 3,
+      "title": "Another post \\(`><´)/",
+      "createdBy": "Shyrlei2002",
+      "language": "Francês",
+      "description": "Another post \\(`><´)/",
+      "categories": [
+        "Cloud computing",
+        "Segurança da informação",
+        "Arquitetura",
+        "Projetos",
+        "Suporte Técnico"
+      ],
       "likes": 0
     }
   ],
@@ -100,5 +128,5 @@
       "postUser": "Shyrlei2002",
       "id": 1
     }
-  ],
+  ]
 }

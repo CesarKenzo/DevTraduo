@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { TrendingComponent } from './trending/trending.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CreatePostComponent } from './create-post/create-post.component';
     FooterComponent,
     ProfileComponent,
     UploadFileComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    TrendingComponent
   ],
   imports: [
     CommonModule,

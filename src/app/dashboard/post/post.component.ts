@@ -10,6 +10,7 @@ import { Comment } from 'src/app/model/comment';
 import { CommentService } from 'src/app/service/comment.service';
 import { DialogCommentComponent } from 'src/app/shared/components/dialog-comment/dialog-comment.component';
 import { Usuario } from 'src/app/model/usuario';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-post',
@@ -53,8 +54,9 @@ export class PostComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     public dialog: MatDialog,
-    private _postService : PostService,
-    private commentService: CommentService
+    private _postService: PostService,
+    private commentService: CommentService,
+    private snackBar:MatSnackBar
     ) { }
 
   openDialog(): void {
@@ -94,12 +96,22 @@ export class PostComponent implements OnInit {
     this.liked = true;
     this.disliked = false;
     this.post.likes++;
+    this._postService.editarPosts(this.post.id, this.post).subscribe({
+      next: data => {
+        this.snackBar.open('Liked! :)', '', {duration: 3000});
+      }
+    });
   }
   
   postDisliked(){
     this.liked = false;
     this.disliked = true;
     this.post.likes--;
+    this._postService.editarPosts(this.post.id, this.post).subscribe({
+      next: data => {
+        this.snackBar.open('Disliked! :(', '', {duration: 3000});
+      }
+    });
   }
 
   openCommentDialog(): void {

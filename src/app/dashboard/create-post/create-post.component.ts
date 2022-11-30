@@ -50,9 +50,6 @@ export class CreatePostComponent implements OnInit {
     });
   }
 
-  postCategorieList: string[] = ['Cloud computing', 'Segurança da informação', 'Arquitetura', 'Programação', 'IoT', 'Inteligência artificial', 'Business intelligence', 'Big Data', 'Projetos', 'Suporte Técnico']
-  postLanguageList: string[] = ['Inglês','Chinês','Espanhol','Francês','Árabe','Russo','Alemão','Japonês','Bengali','Hindi','Indonésio']
-
   ngOnInit(): void {
     if(localStorage.getItem("Usuario") == null) this.router.navigate(['login']);
     else{
