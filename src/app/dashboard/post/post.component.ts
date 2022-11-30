@@ -14,7 +14,7 @@ import { ShareDialogComponent } from 'src/app/shared/components/share-dialog/sha
 export class PostComponent implements OnInit {
 
   post: Post = {
-    id: 0,
+    id: "",
     title: '',
     createdBy: '',
     language: '',

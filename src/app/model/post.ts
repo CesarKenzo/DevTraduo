@@ -1,11 +1,11 @@
 export class Post {
-    public id?: string;
-    public title?: string;
-    public createdBy?: string;
-    public language?: string;
-    public description?: string;
-    public categories?: string[];
-    public likes?: number;
+    public id: string;
+    public title: string;
+    public createdBy: string;
+    public language: string;
+    public description: string;
+    public categories: string[];
+    public likes: number;
 
     constructor(id: string, title: string, createdBy: string, language: string,
         description: string, categories: string[], likes: number){
