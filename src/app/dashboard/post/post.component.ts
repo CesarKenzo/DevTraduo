@@ -32,7 +32,9 @@ export class PostComponent implements OnInit {
     postId: 0,
     userLogin: '',
     content: '',
-    type: ''
+    type: '',
+    postTitle: '',
+    postUser: ''
   }
 
   translationList: Comment[] = []
@@ -70,20 +72,22 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
     if(localStorage.getItem("Usuario") == null) this.router.navigate(['login']);
     const id = this.route.snapshot.paramMap.get('id');
+
+    this._postService.getPostById(Number.parseInt(id!)).subscribe((post) => {
+      this.post = post
+    })
+    /*
     this._postService.getPostByUserId(localStorage.getItem("Usuario")!).subscribe(retorno => {
       let posts = retorno.posts;
       posts.forEach(element => {
         if(element.id == parseInt(id!)) this.post = element;
       });
     });
-
-    this.commentService.getPosts().subscribe((commentList) => {
+    */
+    this.commentService.getComment().subscribe((commentList) => {
       this.translationList = commentList.filter(c => c.postId == Number.parseInt(id!) && c.type == 'Tradução')
       this.explanationList = commentList.filter(c => c.postId == Number.parseInt(id!) && c.type == 'Explicação')
     })
-    /*this.backendService.findPostById(parseInt(id!)).subscribe((post) => {
-      this.post = post
-    })*/
   }
 
   postLiked(event: MouseEvent){
@@ -100,6 +104,8 @@ export class PostComponent implements OnInit {
 
   openCommentDialog(): void {
     sessionStorage.setItem('postID', this.post.id!.toString())
+    sessionStorage.setItem('postTitle', this.post.title)
+    sessionStorage.setItem('postUser', this.post.createdBy)
     const MatdialogRef = this.dialog.open(DialogCommentComponent, {
       width: '500px',
       data: {name: this.commentPath},

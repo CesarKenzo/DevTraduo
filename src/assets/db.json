@@ -12,84 +12,18 @@
   ],
   "posts": [
     {
-      "id": "Shyrlei2002",
-      "posts": [
-        {
-          "id": 1,
-          "title": "O que é computação em nuvem?",
-          "createdBy": "Jorge",
-          "language": "Português",
-          "description": "Bom dia!!",
-          "categories": [
-            "Cloud computing",
-            "Architecture"
-          ],
-          "likes": 4
-        }
-      ]
-    },
-    {
-      "id": "Jorge2002",
-      "posts": [
-        {
-          "id": 1,
-          "title": "Teste título",
-          "createdBy": "Shyrlei",
-          "language": "Espanhol",
-          "description": "Salve salve",
-          "categories": [
-            "Arquitetura"
-          ],
-          "likes": 0
-        },
-        {
-          "id": 2,
-          "title": "Teste título",
-          "createdBy": "Shyrlei",
-          "language": "Espanhol",
-          "description": "Salve salve",
-          "categories": [
-            "Arquitetura"
-          ],
-          "likes": 0
-        },
-        {
-          "id": 3,
-          "title": "",
-          "createdBy": "Shyrlei",
-          "language": "Francês",
-          "description": "kkkkkkkkkkkkk",
-          "categories": [
-            "Programação"
-          ],
-          "likes": 0
-        },
-        {
-          "id": 4,
-          "title": "",
-          "createdBy": "Shyrlei",
-          "language": "Indonésio ",
-          "description": "Eae maninho",
-          "categories": [
-            "Suporte Técnico"
-          ],
-          "likes": 0
-        },
-        {
-          "id": 5,
-          "title": "Me ajudem!!",
-          "createdBy": "Shyrlei",
-          "language": "Indonésio ",
-          "description": "Por favor",
-          "categories": [
-            "Projetos"
-          ],
-          "likes": 0
-        }
-      ]
+      "id": 1,
+      "title": "Teste Post Shyrlei2002",
+      "createdBy": "Shyrlei2002",
+      "language": "Inglês",
+      "description": "Trecho para Tradução \nTESTE",
+      "categories": [
+        "Cloud computing"
+      ],
+      "likes": 0
     }
   ],
-  "users": [
+  "usersDev": [
     {
       "id": "Shyrlei2002",
       "nome": "Jorge",
@@ -155,5 +89,16 @@
         ""
       ]
     }
-  ]
+  ],
+  "postComment": [
+    {
+      "postId": 1,
+      "userLogin": "Shyrlei2002",
+      "content": "Explicação",
+      "type": "Tradução",
+      "postTitle": "Teste Post Shyrlei2002",
+      "postUser": "Shyrlei2002",
+      "id": 1
+    }
+  ],
 }

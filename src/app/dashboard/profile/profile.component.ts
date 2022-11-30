@@ -63,7 +63,7 @@ export class ProfileComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(MyDialogEditarComponent, {});
     dialogRef.afterClosed().subscribe(result => {
-      console.log('dialog fechaaado!' + result);
+      console.log('dialog fechado!' + result);
     });
   }
 
