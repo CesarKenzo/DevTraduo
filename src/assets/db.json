@@ -155,5 +155,14 @@
         ""
       ]
     }
+  ],
+  "postComment": [
+    {
+      "postId": 1,
+      "userLogin": "Shyrlei2002",
+      "content": "Teste Comentário",
+      "type": "Tradução",
+      "id": 1
+    }
   ]
 }

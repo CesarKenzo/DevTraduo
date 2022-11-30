@@ -16,32 +16,13 @@
           <mat-form-field appearance="fill"> 
             <mat-label>Text's subject</mat-label>
             <mat-select matInput formControlName="categoria" [(ngModel)]="postType">
-              <mat-option value="Cloud computing">Cloud computing</mat-option>
-              <mat-option value="Segurança da informação">Segurança da informação</mat-option>
-              <mat-option value="Arquitetura">Arquitetura</mat-option>
-              <mat-option value="Programação">Programação</mat-option>
-              <mat-option value="IoT">IoT</mat-option>
-              <mat-option value="Inteligência artificial">Inteligência artificial</mat-option>
-              <mat-option value="Business intelligence">Business intelligence</mat-option>
-              <mat-option value="Big Data">Big Data</mat-option>
-              <mat-option value="Projetos">Projetos</mat-option>
-              <mat-option value="Suporte Técnico">Suporte Técnico</mat-option>
+                <mat-option *ngFor="let categorie of postCategorieList" value="{{categorie}}">{{categorie}}</mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Language which inserted text should be translate to.</mat-label>
             <mat-select matInput formControlName="idioma" [(ngModel)]="postLanguage">
-              <mat-option value="Inglês">Inglês</mat-option>
-              <mat-option value="Chinês">Chinês</mat-option>
-              <mat-option value="Espanhol">Espanhol</mat-option>
-              <mat-option value="Francês">Francês</mat-option>
-              <mat-option value="Árabe">Árabe</mat-option>
-              <mat-option value="Russo">Russo</mat-option>
-              <mat-option value="Alemão">Alemão</mat-option>
-              <mat-option value="Japonês ">Japonês</mat-option>
-              <mat-option value="Bengali">Bengali</mat-option>
-              <mat-option value="Hindi">Hindi</mat-option>
-              <mat-option value="Indonésio ">Indonésio</mat-option>
+              <mat-option *ngFor="let language of postLanguageList" value="{{language}}">{{language}}</mat-option>
             </mat-select>
           </mat-form-field>
         </form>
