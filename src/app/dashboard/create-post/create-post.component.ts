@@ -34,6 +34,9 @@ export class CreatePostComponent implements OnInit {
     categories: [],
     likes: 0
   }
+  
+  postCategorieList: string[] = ['Cloud computing', 'Segurança da informação', 'Arquitetura', 'Programação', 'IoT', 'Inteligência artificial', 'Business intelligence', 'Big Data', 'Projetos', 'Suporte Técnico']
+  postLanguageList: string[] = ['Inglês','Chinês','Espanhol','Francês','Árabe','Russo','Alemão','Japonês','Bengali','Hindi','Indonésio']
 
   constructor(private formBuilder: FormBuilder,
      private router:Router,
