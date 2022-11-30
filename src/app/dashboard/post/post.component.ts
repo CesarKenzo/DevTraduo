@@ -5,6 +5,7 @@ import { Post } from '../../model/post'
 import { Router, ActivatedRoute } from '@angular/router';
 import { FlagDialogComponent } from '../../shared/components/flag-dialog/flag-dialog.component';
 import { ShareDialogComponent } from 'src/app/shared/components/share-dialog/share-dialog.component';
+import { PostService } from 'src/app/service/post.service';
 
 @Component({
   selector: 'app-post',
@@ -14,7 +15,7 @@ import { ShareDialogComponent } from 'src/app/shared/components/share-dialog/sha
 export class PostComponent implements OnInit {
 
   post: Post = {
-    id: "",
+    id: 0,
     title: '',
     createdBy: '',
     language: '',
@@ -22,6 +23,9 @@ export class PostComponent implements OnInit {
     categories: [],
     likes: 0
   }
+
+  public liked: boolean = false;
+  public disliked: boolean = false;
 
   filePath: string | undefined;
   flagPath: string | undefined;
@@ -31,7 +35,8 @@ export class PostComponent implements OnInit {
     private backendService: BackendService,
     private router: Router,
     private route: ActivatedRoute,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _postService : PostService
     ) { }
 
   openDialog(): void {
@@ -48,10 +53,29 @@ export class PostComponent implements OnInit {
 
   ngOnInit(): void {
     if(localStorage.getItem("Usuario") == null) this.router.navigate(['login']);
-    const id = this.route.snapshot.paramMap.get('id')
-    this.backendService.findPostById(parseInt(id!)).subscribe((post) => {
+    const id = this.route.snapshot.paramMap.get('id');
+    this._postService.getPostByUserId(localStorage.getItem("Usuario")!).subscribe(retorno => {
+      let posts = retorno.posts;
+      posts.forEach(element => {
+        if(element.id == parseInt(id!)) this.post = element;
+      });
+    });
+    /*this.backendService.findPostById(parseInt(id!)).subscribe((post) => {
       this.post = post
-    })
+    })*/
+  }
+
+
+  postLiked(event: MouseEvent){
+    this.liked = true;
+    this.disliked = false;
+    this.post.likes++;
+  }
+  
+  postDisliked(){
+    this.liked = false;
+    this.disliked = true;
+    this.post.likes--;
   }
 
   openflagDialog(): void {

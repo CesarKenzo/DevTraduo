@@ -6,6 +6,10 @@
       <mat-card-content>
         <form [formGroup]="form">
           <mat-form-field appearance="fill" class="text-field">
+            <mat-label class="text-area-label">Give your post a title!</mat-label>
+            <textarea matInput formControlName="texto" class="text-area-title" [(ngModel)]="postTitle"></textarea>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="text-field">
             <mat-label class="text-area-label">Write here a text that you want to people translate for you.</mat-label>
             <textarea matInput formControlName="texto" class="text-area" [(ngModel)]="postText"></textarea>
           </mat-form-field>

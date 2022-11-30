@@ -1,5 +1,5 @@
 export class Post {
-    public id: string;
+    public id: number;
     public title: string;
     public createdBy: string;
     public language: string;
@@ -7,10 +7,9 @@ export class Post {
     public categories: string[];
     public likes: number;
 
-    constructor(id: string, title: string, createdBy: string, language: string,
+    constructor(id: number, title: string, createdBy: string, language: string,
         description: string, categories: string[], likes: number){
-
-       this.id = id;
+        this.id = id;
        this.title = title;
        this.createdBy = createdBy;
        this.language = language;

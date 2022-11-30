@@ -20,8 +20,9 @@
                 </mat-card>
             </mat-card-content>
             <mat-card-footer>
-                <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
-                <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
+                <button mat-button color="blue" style="background-color: transparent;" (click)="postLiked($event)" [disabled]="liked"><mat-icon >thumb_up</mat-icon></button>
+                <span>{{post.likes}}</span>
+                <button mat-button color="red"  style="background-color: transparent;" (click)="postDisliked()" [disabled]="disliked"><mat-icon >thumb_down</mat-icon></button>
                 <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
                 <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
             </mat-card-footer>

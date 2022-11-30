@@ -2,7 +2,11 @@ body {
   display:flex;
   align-items: center;
   justify-content: center;
-  
+}
+
+.container{
+  max-height: 90%;
+  overflow: scroll;
 }
 
 .column {
