@@ -15,6 +15,7 @@ export class PostCreation {
 
    getLastPost(): number{
     let tmpPosts = Array.from(this.posts);
+    if(tmpPosts.pop() == undefined) return -1;
     let number = tmpPosts.pop()!.id;
     return number;
    }
