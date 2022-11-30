@@ -29,115 +29,50 @@
         </mat-card>
     </div>
     <tr><br/></tr>
-    <mat-form-field appearance="outline" class="comment">
-        <textarea matInput placeholder="Ex. Comentário" style="background-color: #FFF; min-height: 200px;"></textarea>
-        <button mat-button style="background-color: #FFF;"><mat-icon >format_bold</mat-icon></button>
-        <button mat-button style="background-color: #FFF;"><mat-icon >format_italic</mat-icon></button>
-        <button mat-button style="background-color: #FFF;" (click)="openDialog()"><mat-icon >attach_file</mat-icon></button>
-        <button mat-button style="background-color: #FFF;"><mat-icon >format_list_bulleted</mat-icon></button>
-        <button mat-button style="background-color: #FFF;"><mat-icon >format_list_numbered</mat-icon></button>
-    </mat-form-field>
+    <div style="text-align: center;">
+        <button mat-raised-button color="primary" (click)="openCommentDialog()" class="button" style="text-align: center;">Commentar</button>  
+    </div>
     <tr><br/></tr>
     <mat-tab-group class="comment-card">
         <mat-tab label="Tradução"> 
-            <mat-card>
-                <mat-card-title title="review">
-                    <mat-icon>person</mat-icon> Usuário X: 
-                    </mat-card-title>
-                <mat-card-content>
-                    Tradução ...
-                </mat-card-content>
-                <mat-card-footer>
-                    <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
-                    <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
-                    <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
-                    <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
-                    <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
-                </mat-card-footer>
-            </mat-card>
-            <br/>
-            <mat-card>
-                <mat-card-title title="review">
-                    <mat-icon>person</mat-icon>Usuário Y:  
-                </mat-card-title>
-                <mat-card-content>
-                    Tradução ...
-                </mat-card-content>
-                <mat-card-footer>
-                    <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
-                    <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
-                    <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
-                    <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
-                    <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
-                </mat-card-footer>
-            </mat-card>
-            <br/>
-            <mat-card>
-                <mat-card-title title="review">
-                    <mat-icon>person</mat-icon>Usuário Z:  
-                </mat-card-title>
-                <mat-card-content>
-                    Tradução ...
-                </mat-card-content>
-                <mat-card-footer>
-                    <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
-                    <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
-                    <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
-                    <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
-                    <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
-                </mat-card-footer>
-            </mat-card>
-            <br/>
+            <div *ngFor="let comment of translationList">
+                <mat-card>
+                    <mat-card-title title="review">
+                        <mat-icon>person</mat-icon> {{comment.userLogin}}:
+                        </mat-card-title>
+                    <mat-card-content>
+                        {{comment.content}}
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                        <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
+                        <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
+                        <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
+                        <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
+                    </mat-card-footer>
+                </mat-card>
+                <br/>
+            </div>
         </mat-tab>
-        <mat-tab label="Explicação">  
-            <mat-card>
-                <mat-card-title title="review">
-                    <mat-icon>person</mat-icon>Usuario A: 
-                </mat-card-title>
-                <mat-card-content>
-                    Explicação ...
-                </mat-card-content>
-                <mat-card-footer>
-                    <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
-                    <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
-                    <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
-                    <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
-                    <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
-                </mat-card-footer>
-            </mat-card>
-            <br/>
-            <mat-card>
-                <mat-card-title title="review">
-                    <mat-icon>person</mat-icon>Usuario B: 
-                </mat-card-title>
-                <mat-card-content>
-                    Explicação ...
-                </mat-card-content>
-                <mat-card-footer>
-                    <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
-                    <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
-                    <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
-                    <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
-                    <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
-                </mat-card-footer>
-            </mat-card>
-            <br/>
-            <mat-card>
-                <mat-card-title title="review">
-                    <mat-icon>person</mat-icon>Usuario C: 
-                </mat-card-title>
-                <mat-card-content>
-                    Explicação ...
-                </mat-card-content>
-                <mat-card-footer>
-                    <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
-                    <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
-                    <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
-                    <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
-                    <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
-                </mat-card-footer>
-            </mat-card>
-            <br/>
+        <mat-tab label="Explicação">
+            <div *ngFor="let comment of explanationList">
+                <mat-card>
+                    <mat-card-title title="review">
+                        <mat-icon>person</mat-icon> {{comment.userLogin}}: 
+                        </mat-card-title>
+                    <mat-card-content>
+                        {{comment.content}}
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <button mat-button color="blue" style="background-color: transparent;"><mat-icon >thumb_up</mat-icon></button>
+                        <button mat-button color="red"  style="background-color: transparent;"><mat-icon >thumb_down</mat-icon></button>
+                        <button mat-button style="background-color: transparent;"><mat-icon >reply</mat-icon></button>
+                        <button mat-button style="background-color: transparent;" (click)="openflagDialog()"><mat-icon >flag</mat-icon></button>
+                        <button mat-button style="background-color: transparent;" (click)="openShareDialog()"><mat-icon >share</mat-icon></button>
+                    </mat-card-footer>
+                </mat-card>
+                <br/>
+            </div>  
         </mat-tab>
     </mat-tab-group>
     <tr><br/></tr>

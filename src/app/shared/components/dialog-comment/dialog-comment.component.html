@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Comentário</h1>
+<div mat-dialog-content>
+    <form>
+        <div class="selectBox">
+            <select name="selectedTechs" [(ngModel)]="comment.type">
+              <option *ngFor="let type of commentType" [ngValue]="type">
+                    {{ type }}
+              </option>
+            </select> 
+          </div>
+          <br/>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Descrição</mat-label>
+            <input matInput
+            type="textarea"
+            class="input"
+            id="content"
+            name="content"
+            style="min-height: 200px;"
+            [(ngModel)]="comment.content"
+            >
+        </mat-form-field>
+        <div mat-dialog-action [align]="'end'">
+            <button mat-raised-button color="warn" mat-dialog-close>Fechar</button>
+            <button mat-raised-button color="primary" (click)="publicar()" class="button" mat-dialog-close>Enviar</button>
+        </div>
+    </form>
+</div>

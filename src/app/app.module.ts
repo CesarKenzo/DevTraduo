@@ -13,6 +13,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { FlagDialogComponent } from './shared/components/flag-dialog/flag-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { ShareDialogComponent } from './shared/components/share-dialog/share-dialog.component';
 
 
@@ -31,6 +32,7 @@ import { ShareDialogComponent } from './shared/components/share-dialog/share-dia
     AppMaterialModule,
     SharedModule,
     FormsModule,
+    MatFormFieldModule,
     HttpClientModule,
     DashboardModule,
     MatInputModule, 
