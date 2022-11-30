@@ -11,7 +11,7 @@ export class CommentService {
   private urlToComment = "http://localhost:3000/postComment";
   constructor(private _httpClient: HttpClient) { }
   
-  getPosts() : Observable<Comment[]>{
+  getComment() : Observable<Comment[]>{
     return this._httpClient.get<Comment[]>(this.urlToComment);
   }
 
@@ -20,11 +20,11 @@ export class CommentService {
     return this._httpClient.get<Comment>(url);
   }
 
-  criarPost(comment: Comment): Observable<Comment> {
+  criarComment(comment: Comment): Observable<Comment> {
     return this._httpClient.post<Comment>(this.urlToComment, comment);
   }
 
-  editarPost(comment: Comment): Observable<Comment> {
+  editarComment(comment: Comment): Observable<Comment> {
     const url = `${this.urlToComment}/${comment.id}`;
     return this._httpClient.put<Comment>(url, comment);
   }

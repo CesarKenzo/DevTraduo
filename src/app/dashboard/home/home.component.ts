@@ -23,6 +23,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     if(localStorage.getItem("Usuario") == null) this.router.navigate(['login']);
+    this._postService.listar().subscribe((postList) => {
+      this.postList = postList
+    })
+    /*
     this._postService.getPosts().subscribe(retorno => {
       this.postCreationList = retorno;
       console.log(this.postCreationList);
@@ -32,6 +36,7 @@ export class HomeComponent implements OnInit {
       });
       console.log(this.postList);
     });
+    */
     /*this.backendService.listPost().subscribe((postList) => {
       this.postList = postList
     });*/

@@ -34,4 +34,18 @@ export class PostService {
     const url = `${this.urlToPost}/${id}`;
     return this._httpClient.put<PostCreation>(url, post);
   }
+
+  criarPosts(post: Post) : Observable<Post>{
+    const url = this.urlToPost;
+    return this._httpClient.post<Post>(url, post);
+  }
+
+  listar() : Observable<Post[]> {
+    return this._httpClient.get<Post[]>(this.urlToPost);
+  }
+
+  getPostById(id: number): Observable<Post> {
+    const url = `${this.urlToPost}/${id}`;
+    return this._httpClient.get<Post>(url);
+  }
 }

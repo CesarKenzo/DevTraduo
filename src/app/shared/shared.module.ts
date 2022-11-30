@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AppMaterialModule } from './app-material/app-material.module';
 import { MydialogComponent } from './components/mydialog/my-dialog.component';
@@ -24,7 +25,8 @@ import { DialogCommentComponent } from './components/dialog-comment/dialog-comme
   imports: [
     CommonModule,
     AppMaterialModule,
-    FormsModule
+    FormsModule,
+    MatExpansionModule
   ]
 })
 export class SharedModule { }

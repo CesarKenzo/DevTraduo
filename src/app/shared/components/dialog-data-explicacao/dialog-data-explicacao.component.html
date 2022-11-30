@@ -1,15 +1,22 @@
-<h1 mat-dialog-title>Explicações</h1>
-<div mat-dialog-content>
+<div mat-dialog-content style="width: 60vh;">
   Todos as Explicações:
   <ul>
-    <li>
-       Explicação 1
-    </li>
-    <li>
-      Explicação 2
-    </li>
-    <li>
-      Explicação 3
-    </li>
+    <div *ngFor="let translation of explanationList">
+      <mat-accordion>
+        <mat-expansion-panel style="background-color:lightblue;">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="font-size: 16px;">
+              {{translation.postTitle}}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{translation.postUser}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <br/><br/>
+          {{translation.content}}
+        </mat-expansion-panel>
+      </mat-accordion>
+      <br/>
+    </div>
   </ul>
 </div>

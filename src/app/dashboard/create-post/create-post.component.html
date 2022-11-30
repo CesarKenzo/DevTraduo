@@ -7,21 +7,21 @@
         <form [formGroup]="form">
           <mat-form-field appearance="fill" class="text-field">
             <mat-label class="text-area-label">Give your post a title!</mat-label>
-            <textarea matInput formControlName="texto" class="text-area-title" [(ngModel)]="postTitle"></textarea>
+            <textarea matInput formControlName="texto" class="text-area-title" [(ngModel)]="post.title"></textarea>
           </mat-form-field>
           <mat-form-field appearance="fill" class="text-field">
             <mat-label class="text-area-label">Write here a text that you want to people translate for you.</mat-label>
-            <textarea matInput formControlName="texto" class="text-area" [(ngModel)]="postText"></textarea>
+            <textarea matInput formControlName="texto" class="text-area" [(ngModel)]="post.description"></textarea>
           </mat-form-field>
           <mat-form-field appearance="fill"> 
             <mat-label>Text's subject</mat-label>
-            <mat-select matInput formControlName="categoria" [(ngModel)]="postType">
-                <mat-option *ngFor="let categorie of postCategorieList" value="{{categorie}}">{{categorie}}</mat-option>
+            <mat-select multiple matInput formControlName="categoria" [(ngModel)]="post.categories">
+              <mat-option *ngFor="let categorie of postCategorieList" value="{{categorie}}">{{categorie}}</mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Language which inserted text should be translate to.</mat-label>
-            <mat-select matInput formControlName="idioma" [(ngModel)]="postLanguage">
+            <mat-select matInput formControlName="idioma" [(ngModel)]="post.language">
               <mat-option *ngFor="let language of postLanguageList" value="{{language}}">{{language}}</mat-option>
             </mat-select>
           </mat-form-field>

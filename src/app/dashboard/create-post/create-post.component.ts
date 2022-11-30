@@ -22,9 +22,19 @@ export class CreatePostComponent implements OnInit {
   public postType: string;
   public postLanguage: string;
   public postTitle: string;
-  public post: Post;
+  //public post: Post;
   public postToSend: PostCreation = new PostCreation("", []);
 
+  post: Post = {
+    id: 0,
+    title: '',
+    createdBy: '',
+    language: '',
+    description: '',
+    categories: [],
+    likes: 0
+  }
+  
   postCategorieList: string[] = ['Cloud computing', 'Segurança da informação', 'Arquitetura', 'Programação', 'IoT', 'Inteligência artificial', 'Business intelligence', 'Big Data', 'Projetos', 'Suporte Técnico']
   postLanguageList: string[] = ['Inglês','Chinês','Espanhol','Francês','Árabe','Russo','Alemão','Japonês','Bengali','Hindi','Indonésio']
 
@@ -40,6 +50,9 @@ export class CreatePostComponent implements OnInit {
     });
   }
 
+  postCategorieList: string[] = ['Cloud computing', 'Segurança da informação', 'Arquitetura', 'Programação', 'IoT', 'Inteligência artificial', 'Business intelligence', 'Big Data', 'Projetos', 'Suporte Técnico']
+  postLanguageList: string[] = ['Inglês','Chinês','Espanhol','Francês','Árabe','Russo','Alemão','Japonês','Bengali','Hindi','Indonésio']
+
   ngOnInit(): void {
     if(localStorage.getItem("Usuario") == null) this.router.navigate(['login']);
     else{
@@ -53,11 +66,12 @@ export class CreatePostComponent implements OnInit {
   }
 
   public publicar(){
-    this.post = new Post(this.postToSend.getLastPost() + 1, this.postTitle, this.usuario.nome, this.postLanguage, this.postText, [this.postType], 0);
-    console.log(this.postToSend);
-    this.postToSend.appendPost(this.post);
-    console.log(this.postToSend);
-    this._postService.criarPost(localStorage.getItem("Usuario")!, this.postToSend).subscribe({
+    //this.post = new Post(this.postToSend.getLastPost() + 1, this.postTitle, this.usuario.nome, this.postLanguage, this.postText, [this.postType], 0);
+    //console.log(this.postToSend);
+    //this.postToSend.appendPost(this.post);
+    //console.log(this.postToSend);
+    this.post.createdBy = localStorage.getItem("Usuario")!
+    this._postService.criarPosts(this.post).subscribe({
       next: data => {
         this.snackBar.open('Post criado com sucesso!', '', {duration: 3000});
         this.router.navigate(['dashboard/home']);

@@ -19,9 +19,9 @@ export class DialogDataPostsComponent implements OnInit {
   public titles:string[] = [];
 
   ngOnInit(): void {
-    this._postService.getPostByUserId(localStorage.getItem("Usuario")!).subscribe({
+    this._postService.listar().subscribe({
       next: data => {
-        this.posts = data.posts;
+        this.posts = data.filter(p => p.createdBy == localStorage.getItem('Usuario'))
       },
       error: error => {
         console.log(error);
