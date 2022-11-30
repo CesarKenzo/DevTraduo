@@ -60,7 +60,16 @@ export class CreatePostComponent implements OnInit {
         this.router.navigate(['dashboard/home']);
       },
       error: error => {
-        this.snackBar.open('Ocorreu um erro na criação do post!', '', {duration: 3000});
+        this.postToSend.id = localStorage.getItem("Usuario")!;
+        this._postService.criarFirstPost(this.postToSend).subscribe({
+          next: data => {
+            this.snackBar.open('Post criado com sucesso!', '', {duration: 3000});
+            this.router.navigate(['dashboard/home']);
+          },
+          error: error =>{
+            this.snackBar.open('Ocorreu um erro na criação do post!', '', {duration: 3000});
+          }
+        })
       }
     });
   }

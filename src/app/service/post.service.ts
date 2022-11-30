@@ -26,6 +26,10 @@ export class PostService {
     return this._httpClient.put<PostCreation>(url, post);
   }
 
+  criarFirstPost(post: PostCreation){
+    return this._httpClient.post<PostCreation>(this.urlToPost, post);
+  }
+
   editarPost(id: String, post: PostCreation): Observable<PostCreation> {
     const url = `${this.urlToPost}/${id}`;
     return this._httpClient.put<PostCreation>(url, post);
