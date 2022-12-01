@@ -8,7 +8,8 @@ import { PostResponse } from '../model/post_response';
 })
 export class PostResponseService {
 
-  private urlToPost = "http://localhost:3000/posts_responses";
+  //private readonly urlToPost = "http://localhost:3000/posts_responses";
+  private readonly urlToPost = 'https://dev-traduo-db.herokuapp.com/posts_responses';
   constructor(private _httpClient: HttpClient) { }
   
   getPosts() : Observable<PostResponse[]>{

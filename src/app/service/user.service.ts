@@ -9,29 +9,30 @@ import { Usuario } from '../model/usuario';
 })
 export class UserService {
 
-  private url = "http://localhost:3000/usersDev";
+  //private readonly urlToUser = "http://localhost:3000/usersDev";
+  private readonly urlToUser = 'https://dev-traduo-db.herokuapp.com/usersDev';
   constructor(private _httpClient: HttpClient) { }
   
   getUsers() : Observable<Usuario[]>{
-    return this._httpClient.get<Usuario[]>(this.url);
+    return this._httpClient.get<Usuario[]>(this.urlToUser);
   }
 
   buscarPorId(id: String): Observable<Usuario> {
-    const url = `${this.url}/${id}`
+    const url = `${this.urlToUser}/${id}`
     return this._httpClient.get<Usuario>(url);
   }
 
   buscarPorLogin(login: string): Observable<Usuario>{
-    const url = `${this.url}/${login}`
+    const url = `${this.urlToUser}/${login}`
     return this._httpClient.get<Usuario>(url);
   }
 
   criarUsuario(usuario: Usuario): Observable<Usuario> {
-    return this._httpClient.post<Usuario>(this.url, usuario);
+    return this._httpClient.post<Usuario>(this.urlToUser, usuario);
   }
 
   editarUsuario(usuario: Usuario): Observable<Usuario> {
-    const url = `${this.url}/${usuario.id}`;
+    const url = `${this.urlToUser}/${usuario.id}`;
     return this._httpClient.put<Usuario>(url, usuario);
   }
 

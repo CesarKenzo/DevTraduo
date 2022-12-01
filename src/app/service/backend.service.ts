@@ -14,8 +14,8 @@ import { Post } from '../model/post';
 export class BackendService {
 
   private readonly API_PESSOAS = '/assets/pessoas.json';
-  private readonly API_POST = 'https://my-party-db.herokuapp.com/posts';
   //private readonly API_POST = 'http://localhost:3000/posts';
+  private readonly API_POST = 'https://dev-traduo-db.herokuapp.com/posts';
   //private readonly API_POST = '/assets/posts.json';
   private readonly API_CADASTRO = '/assets/cadastro.json';
 

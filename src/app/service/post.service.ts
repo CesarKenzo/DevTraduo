@@ -9,7 +9,8 @@ import { PostCreation } from '../model/postcreation';
 })
 export class PostService {
 
-  private urlToPost = "http://localhost:3000/posts";
+  //private readonly urlToPost = "http://localhost:3000/posts";
+  private readonly urlToPost = 'https://dev-traduo-db.herokuapp.com/posts';
   constructor(private _httpClient: HttpClient) { }
   
   getPosts() : Observable<PostCreation[]>{

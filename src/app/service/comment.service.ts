@@ -8,7 +8,8 @@ import { Comment } from '../model/comment';
 })
 export class CommentService {
 
-  private urlToComment = "http://localhost:3000/postComment";
+  //private readonly urlToComment = "http://localhost:3000/postComment";
+  private readonly urlToComment = 'https://dev-traduo-db.herokuapp.com/postComment';
   constructor(private _httpClient: HttpClient) { }
   
   getComment() : Observable<Comment[]>{
