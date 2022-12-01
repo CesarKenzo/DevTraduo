@@ -13,31 +13,30 @@
   "posts": [
     {
       "id": 1,
-      "title": "Teste Post Shyrlei2002",
+      "title": "Tradução: 'What is artificial intelligence?'",
       "createdBy": "Shyrlei2002",
       "language": "Inglês",
-      "description": "Trecho para Tradução \nTESTE",
+      "description": "In its simplest form, artificial intelligence is a field that combines computer science and robust datasets to enable problem-solving. Expert systems, an early successful application of AI, aimed to copy a human’s decision-making process. In the early days, it was time-consuming to extract and codify the human’s knowledge.",
       "categories": [
-        "Cloud computing"
+        "Inteligência Artificial"
       ],
       "likes": 11
     },
     {
       "id": 2,
-      "title": "One more post!",
+      "title": "Explicação: O que é banco de dados?",
       "createdBy": "Shyrlei2002",
-      "language": "Indonésio",
+      "language": "Inglês",
       "description": "New post here people!",
       "categories": [
         "Big Data",
-        "Projetos",
-        "Suporte Técnico"
+        "Programação"
       ],
       "likes": 12
     },
     {
       "id": 3,
-      "title": "Another post \\(`><´)/",
+      "title": "Explicação: O que é um sistema embarcado?",
       "createdBy": "Shyrlei2002",
       "language": "Francês",
       "description": "Another post \\(`><´)/",
@@ -54,7 +53,7 @@
   "usersDev": [
     {
       "id": "Shyrlei2002",
-      "nome": "Jorge",
+      "nome": "Shyrlei",
       "login": "Shyrlei2002",
       "senha": "testesenha",
       "profissao": "PhD em ciência da computação pela Universidade de Carnegie Mellon e especialista em segurança no projeto Network Attached Secure Disks.",
@@ -67,7 +66,7 @@
     },
     {
       "id": "Jorge2002",
-      "nome": "Shyrlei",
+      "nome": "Jorge",
       "login": "Jorge2002",
       "senha": "testesenha",
       "profissao": "PhD em ciência da computação pela Universidade de Carnegie Mellon e especialista em segurança no projeto Network Attached Secure Disksss.",
@@ -79,9 +78,9 @@
       ]
     },
     {
-      "id": "shirleya",
-      "nome": "shirley",
-      "login": "shirleya",
+      "id": "CesarUser",
+      "nome": "Cesar",
+      "login": "CesarLogin",
       "senha": "312",
       "profissao": "",
       "conhecimentos": "",
@@ -92,9 +91,9 @@
       ]
     },
     {
-      "id": "Jorge2003",
-      "nome": "Bom dia",
-      "login": "Jorge2003",
+      "id": "HenryId",
+      "nome": "Henrique",
+      "login": "HenryUser",
       "senha": "321",
       "profissao": "PhD em ciência",
       "conhecimentos": "",
@@ -105,9 +104,9 @@
       ]
     },
     {
-      "id": "TesteHenry",
-      "nome": "Henry",
-      "login": "TesteHenry",
+      "id": "FelipeUser",
+      "nome": "Felipe",
+      "login": "FelipeUser",
       "senha": "123",
       "profissao": "",
       "conhecimentos": "",
@@ -122,11 +121,20 @@
     {
       "postId": 1,
       "userLogin": "Shyrlei2002",
-      "content": "Explicação",
+      "content": "Em sua forma mais simples, a inteligência artificial é um campo que combina ciência da computação e conjuntos de dados robustos para permitir a solução de problemas. Os sistemas especialistas, uma das primeiras aplicações bem-sucedidas da IA, visavam copiar o processo de tomada de decisão de um ser humano. Nos primeiros dias, era demorado extrair e codificar o conhecimento humano.",
       "type": "Tradução",
-      "postTitle": "Teste Post Shyrlei2002",
+      "postTitle": "O que é inteligência artificial?",
       "postUser": "Shyrlei2002",
       "id": 1
+    },
+    {
+      "postId": 1,
+      "userLogin": "Jorge2002",
+      "content": "IA, que significa inteligência artificial, refere-se a sistemas ou máquinas que mimetizam a inteligência humana para executar tarefas e podem se aprimorar iterativamente com base nas informações que eles coletam. A IA se manifesta de várias formas.",
+      "type": "Explicação",
+      "postTitle": "O que é inteligência artificial?",
+      "postUser": "Shyrlei2002",
+      "id": 2
     }
   ]
 }
