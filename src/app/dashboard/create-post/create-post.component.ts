@@ -67,7 +67,7 @@ export class CreatePostComponent implements OnInit {
     //console.log(this.postToSend);
     //this.postToSend.appendPost(this.post);
     //console.log(this.postToSend);
-    this.post.createdBy = localStorage.getItem("Usuario")!
+    this.post.createdBy = this.usuario.nome
     this._postService.criarPosts(this.post).subscribe({
       next: data => {
         this.snackBar.open('Post criado com sucesso!', '', {duration: 3000});
