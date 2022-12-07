@@ -45,9 +45,9 @@ export class LoginComponent implements OnInit {
 
 
   logar(): void {
-    this._userService.buscarPorId(this.login_nome).subscribe({
+    this._userService.buscarPorId(this.login_nome.trim()).subscribe({
       next: data => {
-      if(data.senha == this.login_senha){
+      if(data.senha == this.login_senha.trim()){
         this._authService.logIn(data);
         this.router.navigate(['dashboard/home']);
       }else{
@@ -67,7 +67,4 @@ export class LoginComponent implements OnInit {
       console.log('dialog fechado!');
     });
   }
-
-
-
 }

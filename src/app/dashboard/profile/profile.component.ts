@@ -49,19 +49,31 @@ export class ProfileComponent implements OnInit {
   }
 
   openTranslation() {
-    this.dialog.open(DialogDataTraducaoComponent, {},);
+    this.dialog.open(DialogDataTraducaoComponent, {
+      width: '800px',
+      height: '230px',
+    },);
   }
 
   openExplanation() {
-    this.dialog.open(DialogDataExplicacaoComponent, {},);
+    this.dialog.open(DialogDataExplicacaoComponent, {
+      width: '800px',
+      height: '230px',
+    },);
   }
 
   openPosts() {
-    this.dialog.open(DialogDataPostsComponent, {},);
+    this.dialog.open(DialogDataPostsComponent, {
+      width: '800px',
+      height: '230px',
+    },);
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(MyDialogEditarComponent, {});
+    const dialogRef = this.dialog.open(MyDialogEditarComponent, {
+      width: '650px',
+      height: '230px',
+    });
     dialogRef.afterClosed().subscribe(result => {
       console.log('dialog fechado!' + result);
     });
