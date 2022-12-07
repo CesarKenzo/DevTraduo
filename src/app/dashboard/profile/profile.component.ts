@@ -51,28 +51,28 @@ export class ProfileComponent implements OnInit {
   openTranslation() {
     this.dialog.open(DialogDataTraducaoComponent, {
       width: '800px',
-      height: '230px',
+      height: '40vh',
     },);
   }
 
   openExplanation() {
     this.dialog.open(DialogDataExplicacaoComponent, {
       width: '800px',
-      height: '230px',
+      height: '40vh',
     },);
   }
 
   openPosts() {
     this.dialog.open(DialogDataPostsComponent, {
       width: '800px',
-      height: '230px',
+      height: '40vh',
     },);
   }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(MyDialogEditarComponent, {
       width: '650px',
-      height: '230px',
+      height: '40vh',
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('dialog fechado!' + result);
