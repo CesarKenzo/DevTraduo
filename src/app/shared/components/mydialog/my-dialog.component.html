@@ -1,12 +1,15 @@
 <h1 mat-dialog-title>Criar uma Conta</h1>
 <div mat-dialog-content>
-  <p>preencha os campos a seguir</p>
-  <mat-label>Nome:</mat-label>
-    <input aria-label="Nome" [(ngModel)]="nome">
-  <mat-label>Login:</mat-label>
-    <input matInput [(ngModel)]="login">
-  <mat-label>Senha:</mat-label>
-    <input matInput [(ngModel)]="senha" type="password">
+  <p>Preencha os campos a seguir</p>
+  <mat-label>Nome:</mat-label>&nbsp;&nbsp;
+  <input matInput aria-label="Nome" [(ngModel)]="nome">
+  <br/><br/>
+  <mat-label>Login:</mat-label>&nbsp;&nbsp;
+  <input matInput [(ngModel)]="login">
+  <br/><br/>
+  <mat-label>Senha:</mat-label>&nbsp;&nbsp;
+  <input matInput [(ngModel)]="senha" type="password">
+  <br/><br/>
 </div>
 <div mat-dialog-actions class="div_button">
   <button class="send" mat-raised-button (click)="onAdd()" color="primary" mat-dialog-close>Confirmar</button>
